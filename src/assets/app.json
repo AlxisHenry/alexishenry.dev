@@ -1,0 +1,42 @@
+{
+    "experiences": [
+        {
+            "id": 1,
+            "name": "Software Engineer",
+            "company": "Cognizant Technology Solutions",
+            "location": "Chennai, India",
+            "duration": "July 2018 - Present",
+            "description": "Working as a Software Engineer in Cognizant Technology Solutions. I have worked on various projects in the domain of Banking and Finance. I have experience in developing web applications using Java, Spring Boot, Angular, and Oracle."
+        },
+        {
+            "id": 2,
+            "name": "Software Engineer",
+            "company": "Cognizant Technology Solutions",
+            "location": "Chennai, India",
+            "duration": "July 2018 - Present",
+            "description": "Working as a Software Engineer in Cognizant Technology Solutions. I have worked on various projects in the domain of Banking and Finance. I have experience in developing web applications using Java, Spring Boot, Angular, and Oracle."
+        }
+    ],
+    "stack": {
+        "backend": [
+            "Java",
+            "Spring Boot",
+            "Hibernate",
+            "Oracle"
+        ],
+        "frontend": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Angular"
+        ],
+        "tools": [
+            "Eclipse",
+            "IntelliJ IDEA",
+            "Visual Studio Code",
+            "Postman"
+        ]
+    },
+    "projects": [],
+    "about": []
+}
