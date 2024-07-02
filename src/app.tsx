@@ -1,4 +1,3 @@
-import './app.css'
 import { Footer, Header, Body } from './components'
 import { DataContext } from './contexts'
 import data from './assets/app.json'
