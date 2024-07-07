@@ -6,4 +6,5 @@ export const DataContext = createContext<Data>({
   frequentlyAskedQuestions: [],
   projects: [],
   workingTogetherSteps: [],
+  contactOptions: [],
 });

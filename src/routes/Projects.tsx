@@ -6,7 +6,7 @@ import { FrequentlyAskedQuestions } from "../components/sections/FrequentlyAsked
 const Projects = () => {
   return (
     <Layout>
-      <div class={"-mt-24"}>
+      <div class={"-mt-36"}>
         <ProjectsSection grid />
         <Contact />
         <FrequentlyAskedQuestions />

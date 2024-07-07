@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  /* #1e1e1e */
   color: #1e1e1e;
   background-color: #f3f8fc;
 }
@@ -12,12 +11,17 @@ body {
   font-size: 20px;
 }
 
+main {
+  min-height: calc(100vh - 4rem);
+  padding-top: 18rem;
+}
+
 main,
 section,
 header div,
 footer div {
   max-width: 1280px;
-  padding-inline: 3rem;
+  padding-inline: 1rem;
 }
 
 header {

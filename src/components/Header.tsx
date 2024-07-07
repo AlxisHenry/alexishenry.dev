@@ -25,10 +25,6 @@ export const Logo = () => {
 
 const tabs = [
   {
-    link: "/projects",
-    name: "Réalisations",
-  },
-  {
     link: "/contact",
     name: "Contact",
   },

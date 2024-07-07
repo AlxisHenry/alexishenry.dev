@@ -2,6 +2,7 @@ import { Title } from "./Title";
 import { Button } from "../ui/Button";
 import { Input } from "../ui/Input";
 import { TextArea } from "../ui/TextArea";
+import { Select } from "../ui/Select";
 
 export const Contact = () => {
   return (
@@ -21,6 +22,7 @@ export const Contact = () => {
           <Input placeholder={"Nom & Prénom"} />
           <Input placeholder={"Email"} />
         </div>
+        <Select placeholder={"Que puis-je faire pour vous ?"} />
         <TextArea placeholder={"Description du projet"} />
         <div class={"flex justify-start mt-2"}>
           <Button>Soumettre ma demande</Button>

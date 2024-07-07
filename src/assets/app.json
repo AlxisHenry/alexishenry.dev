@@ -38,7 +38,7 @@
     },
     {
       "question": "Quels sont mes tarifs ?",
-      "answer": "La tarification dépend du projet et surtout du temps qui sera nécessaire pour le mener à bien. À titre indicatif mon tarif journalier moyen se situe aux alentour de <h>500€/jour</h>."
+      "answer": "La tarification dépend du projet et surtout du temps qui sera nécessaire pour le mener à bien. À titre indicatif mon tarif journalier moyen se situe aux alentour de <h>400€/jour</h>."
     },
     {
       "question": "Est-ce que je me déplace ?",
@@ -102,5 +102,13 @@
       "title": "Suivi & maintenance",
       "description": "Je reste disponible pour vous accompagner dans l'évolution de votre projet. Je vous propose des mises à jour si nécessaire."
     }
+  ],
+  "contactOptions": [
+    "Site vitrine",
+    "Création d'un blog",
+    "Boutique e-commerce",
+    "Application web",
+    "Application mobile",
+    "Autre"
   ]
 }

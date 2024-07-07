@@ -3,6 +3,7 @@ export type Data = {
   frequentlyAskedQuestions: FrequentlyAskedQuestion[];
   projects: Project[];
   workingTogetherSteps: WorkingTogetherStep[];
+  contactOptions: string[];
 };
 
 type WorkingTogetherStep = {

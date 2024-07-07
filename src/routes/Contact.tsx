@@ -5,7 +5,7 @@ import { FrequentlyAskedQuestions } from "../components/sections/FrequentlyAsked
 const Contact = () => {
   return (
     <Layout>
-      <div class={"-mt-24"}>
+      <div class={"-mt-28"}>
         <ContactSection />
         <FrequentlyAskedQuestions />
       </div>
