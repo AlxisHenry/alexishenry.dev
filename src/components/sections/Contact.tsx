@@ -1,5 +1,7 @@
-import { Title } from "./index";
-import { Button, Input, TextArea } from "../ui";
+import { Title } from "./Title";
+import { Button } from "../ui/Button";
+import { Input } from "../ui/Input";
+import { TextArea } from "../ui/TextArea";
 
 export const Contact = () => {
   return (

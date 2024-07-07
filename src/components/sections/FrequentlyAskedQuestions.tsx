@@ -1,7 +1,9 @@
 import { useState } from "preact/hooks";
-import { Title } from "./index";
 import { ChevronDown } from "react-feather";
+
 import { useData } from "../../hooks";
+
+import { Title } from "./Title";
 
 export const FrequentlyAskedQuestions = () => {
   const { frequentlyAskedQuestions } = useData();

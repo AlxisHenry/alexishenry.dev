@@ -1,9 +1,7 @@
-import { Layout } from "../components";
-import {
-  Projects as ProjectsSection,
-  Contact,
-  FrequentlyAskedQuestions,
-} from "../components/sections";
+import { Layout } from "../components/Layout";
+import { Projects as ProjectsSection } from "../components/sections/Projects.tsx";
+import { Contact } from "../components/sections/Contact";
+import { FrequentlyAskedQuestions } from "../components/sections/FrequentlyAskedQuestions";
 
 const Projects = () => {
   return (

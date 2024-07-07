@@ -1,6 +1,8 @@
-import { useData } from "../../hooks";
-import { Title } from "./index";
 import * as Feather from "react-feather";
+
+import { useData } from "../../hooks";
+
+import { Title } from "./Title";
 
 export const Services = () => {
   const { services } = useData();

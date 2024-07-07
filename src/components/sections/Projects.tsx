@@ -1,7 +1,8 @@
-import { useState } from "preact/hooks";
-import { Title } from "./index";
 import { ArrowRight } from "react-feather";
+
 import { useData } from "../../hooks";
+
+import { Title } from "./Title";
 
 interface ProjectsProps {
   grid?: boolean;
@@ -11,8 +12,6 @@ export const Projects = (props: ProjectsProps) => {
   const { grid = false } = props;
 
   const { projects } = useData();
-
-  const [currentProject, setCurrentProject] = useState(0);
 
   return (
     <section id={"projects"}>
@@ -34,7 +33,7 @@ export const Projects = (props: ProjectsProps) => {
       {!grid && (
         <div class={"flex justify-end mt-8 gap-2"}>
           {projects.map((_, index) => (
-            <Indicator index={index} currentProject={currentProject} />
+            <Indicator index={index} />
           ))}
         </div>
       )}
@@ -44,7 +43,7 @@ export const Projects = (props: ProjectsProps) => {
 
 interface IndicatorProps {
   index: number;
-  currentProject: number;
+  currentProject?: number;
 }
 
 const Indicator = (props: IndicatorProps) => {

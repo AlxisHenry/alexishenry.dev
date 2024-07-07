@@ -1,5 +1,6 @@
-import { useData } from "../../hooks/useData.ts";
-import { Title } from "./index";
+import { useData } from "../../hooks/useData";
+
+import { Title } from "./Title";
 
 export const WorkTogether = () => {
   const { workingTogetherSteps } = useData();

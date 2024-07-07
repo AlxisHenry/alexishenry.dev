@@ -1,4 +1,5 @@
-import { Footer, Header } from "../components";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 
 interface LayoutProps {
   children: any;
