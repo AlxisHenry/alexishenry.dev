@@ -10,6 +10,7 @@ import {
 
 const Home = lazy(() => import("./routes/Home"));
 // const Projects = lazy(() => import("./routes/Projects"));
+const ComingSoon = lazy(() => import("./routes/ComingSoon"));
 const Contact = lazy(() => import("./routes/Contact"));
 const NotFound = lazy(() => import("./routes/NotFound"));
 
@@ -21,7 +22,7 @@ export function App() {
           <ErrorBoundary>
             <Router>
               <Route path="/" component={Home} />
-              {/* <Route path="/projects" component={Projects} /> */}
+              <Route path="/projects" component={ComingSoon} />
               <Route path="/contact" component={Contact} />
               <NotFound default />
             </Router>
