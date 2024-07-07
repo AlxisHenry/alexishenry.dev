@@ -1,10 +1,4 @@
-interface SpinnerProps {
-  size?: number;
-}
-
-export const Spinner = (props: SpinnerProps) => {
-  const { size = 8 } = props;
-
+export const Spinner = () => {
   return (
     <div role="status">
       <svg
