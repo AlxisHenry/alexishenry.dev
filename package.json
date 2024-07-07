@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/preact-i18n": "^2.3.6",
+    "framer-motion": "^11.2.13",
     "preact": "^10.22.0",
+    "preact-i18n": "^1.5.0",
+    "preact-render-to-string": "^6.5.5",
     "react-feather": "^2.0.10"
   },
   "devDependencies": {

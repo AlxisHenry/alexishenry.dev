@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  /* #1e1e1e */
+  color: #1e1e1e;
+  background-color: #f3f8fc;
+}
+
+:root {
+  font-size: 20px;
+}
+
+main,
+section,
+header div,
+footer div {
+  max-width: 1280px;
+  padding-inline: 3rem;
+}
+
+header {
+  background-color: #f3f8fc;
+}
+
+section {
+  margin: 0 auto;
+  margin-top: 14em;
+}
+
+.name {
+  font-family: Playfair Display, serif;
+  font-size: 150px;
+  line-height: 1;
+  margin-top: -0.6em;
+  max-width: 640px;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 100px;
+  }
+}
+
+.projects {
+   -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+button:hover .button__arrow {
+  transform: translateX(0.5rem);
+  display: flex;
+}
+
+.button__arrow {
+  display: none;
+  transition: all 0.3s;
+}

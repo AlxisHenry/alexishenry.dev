@@ -1,31 +1,78 @@
-import { Menu, ArrowRight } from "react-feather";
+import { useState } from "preact/hooks";
 
 export const Header = () => {
+
   return (
-    <header className="text-2xl flex justify-between items-center p-8 max-w-screen-xl mx-auto">
-      <Logo />
-      <Navigation />
+    <header className="fixed top-0 left-0 right-0 z-50 border-b-2 border-gray-200 shadow-sm">
+      <div class={"text-2xl flex justify-between items-center py-4 mx-auto"}>
+        <Logo />
+        <Navigation />
+      </div>
     </header>
   );
 };
 
-const Logo = () => {
+export const Logo = () => {
   return (
-    <div>
-      <h1 class={"text-4xl font-thin"}>alexis<span class={"font-bold text-blue-500"}>conception.</span></h1>
-    </div>
+    <a class={"p-0 select-none"} href={"/"}>
+      <h1 class={"text-4xl font-thin"}>
+        <span className={"italic"}>alexis</span>
+        <span class={"font-extrabold text-blue-500"}>henry.</span>
+      </h1>
+    </a>
   );
 };
 
+const tabs = [
+  {
+    link: "/projects",
+    name: "Réalisations",
+  },
+  {
+    link: "/contact",
+    name: "Contact",
+  },
+];
+
 const Navigation = () => {
+  const [currentTab, setCurrentTab] = useState(window.location.pathname);
+
   return (
     <nav class={"flex gap-12"}>
-      <div class={"hidden gap-2 items-center border-2 border-black transition duration-500 p-2 px-4 rounded-full cursor-pointer hover:bg-black hover:text-white sm:flex"}>
-          Let's Talk <ArrowRight />
-        </div>
-        <div class={"p-4 px-4 rounded-full border-2 border-black flex items-center cursor-pointer hover:bg-black hover:text-white transition duration-500"}>
-          <Menu />
-        </div>
+      {tabs.map((tab) => (
+        <NavLink
+          active={tab.link == currentTab}
+          link={tab.link}
+          onClick={() => {
+            setCurrentTab(tab.link);
+          }}
+        >
+          {tab.name}
+        </NavLink>
+      ))}
     </nav>
+  );
+};
+
+interface NavLinkProps {
+  children: string;
+  active?: boolean;
+  onClick: () => void;
+  link: string;
+}
+
+const NavLink = (props: NavLinkProps) => {
+  const { children, active, onClick, link } = props;
+
+  return (
+    <a
+      onClick={onClick}
+      class={`text-xl font-semibold hover:text-blue-500 transition-colors duration-300 ease-in-out border-b-2 border-transparent hover:border-blue-500 ${
+        active ? "border-b-blue-500 text-blue-500" : "text-gray-500"
+      }`}
+      href={link}
+    >
+      {children}
+    </a>
   );
 };
