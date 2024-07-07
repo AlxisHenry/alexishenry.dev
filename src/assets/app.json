@@ -1,42 +1,106 @@
 {
-    "experiences": [
-        {
-            "id": 1,
-            "name": "Software Engineer",
-            "company": "Cognizant Technology Solutions",
-            "location": "Chennai, India",
-            "duration": "July 2018 - Present",
-            "description": "Working as a Software Engineer in Cognizant Technology Solutions. I have worked on various projects in the domain of Banking and Finance. I have experience in developing web applications using Java, Spring Boot, Angular, and Oracle."
-        },
-        {
-            "id": 2,
-            "name": "Software Engineer",
-            "company": "Cognizant Technology Solutions",
-            "location": "Chennai, India",
-            "duration": "July 2018 - Present",
-            "description": "Working as a Software Engineer in Cognizant Technology Solutions. I have worked on various projects in the domain of Banking and Finance. I have experience in developing web applications using Java, Spring Boot, Angular, and Oracle."
-        }
-    ],
-    "stack": {
-        "backend": [
-            "Java",
-            "Spring Boot",
-            "Hibernate",
-            "Oracle"
-        ],
-        "frontend": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Angular"
-        ],
-        "tools": [
-            "Eclipse",
-            "IntelliJ IDEA",
-            "Visual Studio Code",
-            "Postman"
-        ]
+  "services": [
+    {
+      "icon": "Crop",
+      "title": "Site sur mesure",
+      "description": "Vous avez un projet sur mesure ? Je vous accompagne dans la réalisation de votre projet."
     },
-    "projects": [],
-    "about": []
+    {
+      "icon": "Package",
+      "title": "Site vitrine & blog",
+      "description": "Vous avez besoin d'un site vitrine ou d'un blog ? Je développe des sites web sur mesure avec WordPress."
+    },
+    {
+      "icon": "DollarSign",
+      "title": "Intégration shopify",
+      "description": "Je maîtrise l'intégration de thèmes Shopify et le développement de fonctionnalités sur mesure."
+    },
+    {
+      "icon": "Database",
+      "title": "Laravel",
+      "description": "PHP est un langage que je maîtrise parfaitement. Je développe des applications web sur mesure avec Laravel."
+    },
+    {
+      "icon": "Layout",
+      "title": "React & Next.js",
+      "description": "Pour le développement d'applications dynamiques et réactives, je maîtrise React et Next.js."
+    },
+    {
+      "icon": "Tablet",
+      "title": "Applications mobiles",
+      "description": "Vous recherchez une personne pour développer une application mobile ? J'ai une expérience significative avec React Native."
+    }
+  ],
+  "frequentlyAskedQuestions": [
+    {
+      "question": "Quels sont mes disponibilités ?",
+      "answer": "Je suis actuellement <h>disponible</h> pour de nouvelles missions."
+    },
+    {
+      "question": "Quels sont mes tarifs ?",
+      "answer": "La tarification dépend du projet et surtout du temps qui sera nécessaire pour le mener à bien. À titre indicatif mon tarif journalier moyen se situe aux alentour de <h>500€/jour</h>."
+    },
+    {
+      "question": "Est-ce que je me déplace ?",
+      "answer": "Etant basé à <h>Strasbourg</h> <img src='https://camo.githubusercontent.com/91569e9a7327b49d7d2d017932b67fddc645967030c6342b64020a6bf7dd11a4/68747470733a2f2f63646e2d69636f6e732d706e672e666c617469636f6e2e636f6d2f3531322f3139372f3139373536302e706e67' class='size-4 mr-1 inline-block' alt='France' /> je peux me déplacer dans les alentours pour des missions en présentiel. Mais je suis plus à l'aise pour travailler à distance."
+    },
+    {
+      "question": "Quelles sont mes garanties ?",
+      "answer": "Je m'engage à vous fournir un travail de <h>qualité</h>, dans les délais impartis. Je m'engage également à respecter la confidentialité de vos données. En fonction du projet je m'engage à vous fournir un support après livraison du projet ainsi que des mises à jour si nécessaire."
+    },
+    {
+      "question": "Quels sont mes domaines d'expertises ?",
+      "answer": "Je suis spécialisé dans le développement web et mobile. Je peux réaliser des sites web sur mesure, des applications web et mobiles, des API, des application..."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Epigrades",
+      "description": "Développement d'une application web pour la gestion des notes des élèves.",
+      "stack": ["Next.js", "TypeScript", "Puppeteer"]
+    },
+    {
+      "title": "Syl'services",
+      "description": "Développement d'une application de gestion de stock.",
+      "stack": ["Laravel", "Livewire", "TailwindCSS"]
+    },
+    {
+      "title": "Portfolio",
+      "description": "Développement de mon portfolio personnel.",
+      "stack": ["Preact", "TailwindCSS"]
+    },
+    {
+      "title": "E-commerce",
+      "description": "Développement d'une boutique en ligne.",
+      "stack": ["React", "Node.js", "MongoDB"]
+    },
+    {
+      "title": "Blog",
+      "description": "Développement d'un blog avec WordPress.",
+      "stack": ["WordPress", "PHP", "MySQL"]
+    },
+    {
+      "title": "Application mobile",
+      "description": "Développement d'une application mobile pour la gestion des tâches.",
+      "stack": ["React Native", "Expo"]
+    }
+  ],
+  "workingTogetherSteps": [
+    {
+      "title": "Définition du besoin",
+      "description": "Nous échangeons sur votre projet, vos besoins et vos attentes. Je vous propose des solutions adaptées à votre projet."
+    },
+    {
+      "title": "Développement",
+      "description": "Je développe votre projet en respectant les bonnes pratiques de développement. Je vous tiens informé de l'avancée du projet."
+    },
+    {
+      "title": "Livraison",
+      "description": "Je vous livre votre projet. Je vous accompagne dans la prise en main de votre projet et je vous forme si nécessaire."
+    },
+    {
+      "title": "Suivi & maintenance",
+      "description": "Je reste disponible pour vous accompagner dans l'évolution de votre projet. Je vous propose des mises à jour si nécessaire."
+    }
+  ]
 }

@@ -1,13 +1,31 @@
-import { Footer, Header, Body } from './components'
-import { DataContext } from './contexts'
-import data from './assets/app.json'
+import { DataContext } from "./contexts";
+import data from "./assets/app.json";
+import {
+  lazy,
+  LocationProvider,
+  ErrorBoundary,
+  Router,
+  Route,
+} from "preact-iso";
+
+const Home = lazy(() => import("./routes/Home"));
+const Projects = lazy(() => import("./routes/Projects"));
+const Contact = lazy(() => import("./routes/Contact"));
+const NotFound = lazy(() => import("./routes/NotFound"));
 
 export function App() {
   return (
     <DataContext.Provider value={data}>
-      <Header />
-      <Body />
-      <Footer />
+      <LocationProvider>
+        <ErrorBoundary>
+          <Router>
+            <Route path="/" component={Home} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/contact" component={Contact} />
+            <NotFound default />
+          </Router>
+        </ErrorBoundary>
+      </LocationProvider>
     </DataContext.Provider>
-  )
+  );
 }

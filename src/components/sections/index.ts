@@ -1,0 +1,7 @@
+export { Title } from './Title'
+export { Main } from './Main'
+export { WorkTogether } from './WorkTogether'
+export { Services } from './Services'
+export { Projects } from './Projects'
+export { Contact } from './Contact'
+export { FrequentlyAskedQuestions } from './FrequentlyAskedQuestions'

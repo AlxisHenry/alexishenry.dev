@@ -13,6 +13,7 @@
     "framer-motion": "^11.2.13",
     "preact": "^10.22.0",
     "preact-i18n": "^1.5.0",
+    "preact-iso": "^2.6.3",
     "preact-render-to-string": "^6.5.5",
     "react-feather": "^2.0.10"
   },

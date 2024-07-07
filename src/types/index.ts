@@ -1,27 +1,28 @@
 export type Data = {
-  experiences: Experience[],
-  stack: Stack,
-  projects: Project[],
-  about: any
-}
+  services: Service[];
+  frequentlyAskedQuestions: FrequentlyAskedQuestion[];
+  projects: Project[];
+  workingTogetherSteps: WorkingTogetherStep[];
+};
 
-export type Stack = {
-  backend: string[],
-  frontend: string[],
-  tools: string[]
-}
+type WorkingTogetherStep = {
+  title: string;
+  description: string;
+};
 
-export type Experience = {
-  id: number,
-  name: string,
-  company: string,
-  location: string,
-  duration: string,
-  description: string
-}
+type Project = {
+  title: string;
+  description: string;
+  stack: string[];
+};
 
-export type Project = {
-  name: string,
-  description: string,
-  url: string
-}
+type FrequentlyAskedQuestion = {
+  question: string;
+  answer: string;
+};
+
+type Service = {
+  icon: string;
+  title: string;
+  description: string;
+};

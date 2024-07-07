@@ -13,6 +13,9 @@ dependencies:
   preact-i18n:
     specifier: ^1.5.0
     version: 1.5.0(preact@10.22.0)
+  preact-iso:
+    specifier: ^2.6.3
+    version: 2.6.3(preact-render-to-string@6.5.5)(preact@10.22.0)
   preact-render-to-string:
     specifier: ^6.5.5
     version: 6.5.5(preact@10.22.0)
@@ -1592,6 +1595,16 @@ packages:
     dependencies:
       dlv: 1.1.3
       preact: 10.22.0
+    dev: false
+
+  /preact-iso@2.6.3(preact-render-to-string@6.5.5)(preact@10.22.0):
+    resolution: {integrity: sha512-2JqNi+Elyt7rf0kULtMn/QskbZE10cDMrhmoanGKWJX3gOCTIfLt/ta5xWu+kQUsyInPkTQIVp3fS5Im0V+X8A==}
+    peerDependencies:
+      preact: '>=10'
+      preact-render-to-string: '>=6.4.0'
+    dependencies:
+      preact: 10.22.0
+      preact-render-to-string: 6.5.5(preact@10.22.0)
     dev: false
 
   /preact-render-to-string@6.5.5(preact@10.22.0):
