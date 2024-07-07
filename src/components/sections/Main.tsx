@@ -1,8 +1,8 @@
-import { GitHub, Linkedin } from "react-feather";
+import { GitHub, Instagram, Linkedin, Mail, Phone } from "react-feather";
 
 export const Main = () => {
   return (
-    <main class={"text-2xl flex gap-14 mx-auto flex-col leading-9"}>
+    <main class={"text-2xl flex gap-14 mx-auto flex-col leading-9 h-screen"}>
       <div class={"flex align-center gap-8 justify-between"}>
         <div>
           <h1 class={"name"}>Alexis HENRY</h1>
@@ -30,6 +30,36 @@ export const Main = () => {
               }
             >
               <Linkedin size={38} />
+            </a>
+            <a
+              href={"https://www.linkedin.com/in/alexishenry03/"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+              class={
+                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+              }
+            >
+              <Instagram size={38} />
+            </a>
+            <a
+              href={"https://www.linkedin.com/in/alexishenry03/"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+              class={
+                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+              }
+            >
+              <Mail size={38} />
+            </a>
+            <a
+              href={"https://www.linkedin.com/in/alexishenry03/"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+              class={
+                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+              }
+            >
+              <Phone size={38} />
             </a>
           </div>
         </div>

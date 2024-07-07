@@ -46,10 +46,13 @@ export const Logo = () => {
 };
 
 const tabs = [
-  // {
-  //   link: "/projects",
-  //   name: "Réalisations",
-  // },
+  {
+    link: "/",
+    name: "Accueil",
+  }, {
+    link: "/projects",
+    name: "Réalisations",
+  },
   {
     link: "/contact",
     name: "Contact",
@@ -57,6 +60,7 @@ const tabs = [
 ];
 
 const Navigation = () => {
+  console.log(window.location.pathname);
   const [currentTab, setCurrentTab] = useState(window.location.pathname);
 
   return (
