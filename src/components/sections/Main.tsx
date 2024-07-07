@@ -8,7 +8,7 @@ export const Main = () => {
           <h1 class={"name"}>Alexis HENRY</h1>
           <p class={"mt-4"}>
             Un développeur web & mobile{" "}
-            <span class={"text-blue-500"}>passionné</span>.
+            <span class={"text-blue-500 font-bold"}>passionné</span>.
           </p>
           <div class={"flex gap-4 mt-6"}>
             <a
