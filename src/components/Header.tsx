@@ -14,6 +14,7 @@ export const Header = () => {
 };
 
 const ThemeSwitcher = () => {
+  return <></>;
   return (
     <ThemeContext.Consumer>
       {(t) => (
@@ -71,7 +72,7 @@ const Navigation = () => {
           {tab.name}
         </NavLink>
       ))}
-      {/* <ThemeSwitcher /> */}
+      <ThemeSwitcher />
     </nav>
   );
 };
