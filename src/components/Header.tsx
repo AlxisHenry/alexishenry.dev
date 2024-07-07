@@ -14,7 +14,6 @@ export const Header = () => {
 };
 
 const ThemeSwitcher = () => {
-  return <></>;
   return (
     <ThemeContext.Consumer>
       {(t) => (
@@ -48,7 +47,7 @@ export const Logo = () => {
 const tabs = [
   {
     link: "/",
-    name: "Accueil",
+    name: "Qui suis-je ?",
   }, {
     link: "/projects",
     name: "Réalisations",
