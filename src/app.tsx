@@ -1,4 +1,4 @@
-import { DataContext } from "./contexts";
+import { DataContext, ThemeProvider } from "./contexts";
 import data from "./assets/app.json";
 import {
   lazy,
@@ -15,17 +15,19 @@ const NotFound = lazy(() => import("./routes/NotFound"));
 
 export function App() {
   return (
-    <DataContext.Provider value={data}>
-      <LocationProvider>
-        <ErrorBoundary>
-          <Router>
-            <Route path="/" component={Home} />
-            {/* <Route path="/projects" component={Projects} /> */}
-            <Route path="/contact" component={Contact} />
-            <NotFound default />
-          </Router>
-        </ErrorBoundary>
-      </LocationProvider>
-    </DataContext.Provider>
+    <ThemeProvider>
+      <DataContext.Provider value={data}>
+        <LocationProvider>
+          <ErrorBoundary>
+            <Router>
+              <Route path="/" component={Home} />
+              {/* <Route path="/projects" component={Projects} /> */}
+              <Route path="/contact" component={Contact} />
+              <NotFound default />
+            </Router>
+          </ErrorBoundary>
+        </LocationProvider>
+      </DataContext.Provider>
+    </ThemeProvider>
   );
 }

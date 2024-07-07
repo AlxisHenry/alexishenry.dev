@@ -1,7 +1,8 @@
 import { useState } from "preact/hooks";
+import { ThemeContext } from "../contexts";
+import { Moon, Sun } from "react-feather";
 
 export const Header = () => {
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b-2 border-gray-200 shadow-sm">
       <div class={"text-2xl flex justify-between items-center py-4 mx-auto"}>
@@ -9,6 +10,26 @@ export const Header = () => {
         <Navigation />
       </div>
     </header>
+  );
+};
+
+const ThemeSwitcher = () => {
+  return (
+    <ThemeContext.Consumer>
+      {(t) => (
+        <button
+          class={
+            "text-xl font-semibold hover:text-blue-500 text-gray-500 transition-all duration-300 ease-in-out transform hover:scale-105"
+          }
+          onClick={() => {
+            if (!t.setTheme) return;
+            t.setTheme(t.theme == "light" ? "dark" : "light");
+          }}
+        >
+          {t.theme == "light" ? <Moon size={36} /> : <Sun size={36} />}
+        </button>
+      )}
+    </ThemeContext.Consumer>
   );
 };
 
@@ -24,6 +45,10 @@ export const Logo = () => {
 };
 
 const tabs = [
+  // {
+  //   link: "/projects",
+  //   name: "Réalisations",
+  // },
   {
     link: "/contact",
     name: "Contact",
@@ -46,6 +71,7 @@ const Navigation = () => {
           {tab.name}
         </NavLink>
       ))}
+      {/* <ThemeSwitcher /> */}
     </nav>
   );
 };
