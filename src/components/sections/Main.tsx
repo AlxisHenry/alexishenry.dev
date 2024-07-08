@@ -1,4 +1,4 @@
-import { GitHub, Instagram, Linkedin, Mail, Phone } from "react-feather";
+import { GitHub, Linkedin } from "react-feather";
 
 export const Main = () => {
   return (

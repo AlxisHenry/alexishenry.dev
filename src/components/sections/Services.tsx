@@ -1,10 +1,9 @@
 import * as Feather from "react-feather";
-import { motion, useAnimate } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { useData } from "../../hooks";
 
 import { Title } from "./Title";
-import { useEffect } from "preact/hooks";
 
 export const Services = () => {
   const { services } = useData();
