@@ -1,6 +1,12 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
+    // colors: {
+      // "primary": "#1e1e1e",
+      // "secondary": "#f3f8fc",
+      // "details": "#f3f8fc",
+    // },
     extend: {
       fontSize: {
         "2xs": ".625rem",

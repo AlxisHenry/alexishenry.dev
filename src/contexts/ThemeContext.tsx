@@ -3,7 +3,7 @@ import { useEffect, useState } from "preact/hooks";
 
 export interface ThemeContextType {
   theme: string;
-  setTheme?: (theme: string) => void;
+  store?: (theme: string) => void;
 }
 
 interface ThemeProviderProps {
@@ -12,7 +12,7 @@ interface ThemeProviderProps {
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: "dark",
-  setTheme: () => {},
+  store: () => { },
 });
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
@@ -20,7 +20,12 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    store();
+    let currentTheme = localStorage.getItem("theme") ?? null;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (!currentTheme) {
+      currentTheme = prefersDark ? "dark" : "light";
+    }
+    apply(currentTheme);
   }, [theme]);
 
   function store() {
@@ -30,13 +35,17 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
   }
 
   function apply(theme: string) {
-    const classList = document.documentElement.classList;
-    classList.add(theme);
-    classList.remove(theme === "light" ? "dark" : "light");
+    setTheme(theme);
+    const documentElement = document.documentElement.classList;
+    const body = document.body.classList;
+    documentElement.add(theme);
+    documentElement.remove(theme === "light" ? "dark" : "light");
+    body.add(theme);
+    body.remove(theme === "light" ? "dark" : "light");
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, store }}>
       {children}
     </ThemeContext.Provider>
   );

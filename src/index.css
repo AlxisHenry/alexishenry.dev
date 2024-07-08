@@ -2,13 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #1e1e1e;
-  background-color: #f3f8fc;
-}
-
 :root {
   font-size: 20px;
+  --color-primary: #1e1e1e;
+  --color-secondary: #f3f8fc;
+}
+
+body.dark {
+  --color-primary: #f3f8fc;
+  --color-secondary: #1e1e1e;
+}
+
+body {
+  transition: background-color 0.2s;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
 }
 
 main {
@@ -19,19 +27,25 @@ main {
 
 main,
 section,
-header div,
+header .container,
 footer div {
   max-width: 1280px;
   padding-inline: 1rem;
 }
 
-header {
-  background-color: #f3f8fc;
+header, nav {
+  background-color: var(--color-secondary);
 }
 
 section {
   margin: 0 auto;
   margin-top: 14em;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    margin-top: 6em;
+  }
 }
 
 .name {
