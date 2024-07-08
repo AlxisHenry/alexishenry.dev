@@ -2,15 +2,15 @@ import { GitHub, Instagram, Linkedin, Mail, Phone } from "react-feather";
 
 export const Main = () => {
   return (
-    <main class={"text-2xl flex gap-14 mx-auto flex-col leading-9 h-screen"}>
-      <div class={"flex align-center gap-8 justify-between"}>
+    <main class={"text-2xl flex gap-14 mx-auto flex-col leading-9 h-screen text-center lg:text-left"}>
+      <div class={"flex align-center gap-8 justify-center lg:justify-between"}>
         <div>
           <h1 class={"name"}>Alexis HENRY</h1>
           <p class={"mt-4"}>
             Un développeur web & mobile{" "}
             <span class={"text-blue-500 font-bold"}>passionné</span>.
           </p>
-          <div class={"flex gap-4 mt-6"}>
+          <div class={"flex gap-4 mt-6 justify-center lg:justify-start"}>
             <a
               href={"https://github.com/AlxisHenry"}
               target={"_blank"}
@@ -31,39 +31,9 @@ export const Main = () => {
             >
               <Linkedin size={38} />
             </a>
-            <a
-              href={"https://www.linkedin.com/in/alexishenry03/"}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-              class={
-                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-              }
-            >
-              <Instagram size={38} />
-            </a>
-            <a
-              href={"https://www.linkedin.com/in/alexishenry03/"}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-              class={
-                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-              }
-            >
-              <Mail size={38} />
-            </a>
-            <a
-              href={"https://www.linkedin.com/in/alexishenry03/"}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-              class={
-                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-              }
-            >
-              <Phone size={38} />
-            </a>
           </div>
         </div>
-        <div class={"relative hidden md:block"}>
+        <div class={"relative hidden lg:block"}>
           <img
             src={
               "https://avatars.githubusercontent.com/u/91117127?s=400&u=d56546995d2f5c3f5f5775d1a223a9676ef2766f&v=4"

@@ -39,7 +39,7 @@ export const Contact = () => {
         </p>
       ) : (
         <form
-          class={"mt-8"}
+          class={"mt-4"}
           action={"https://formsubmit.co/3d56f781c802302b665ebc5d9bf1dcb9 "}
           method={"POST"}
           onSubmit={onSubmit}
