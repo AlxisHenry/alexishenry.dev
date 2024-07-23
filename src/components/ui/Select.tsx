@@ -15,11 +15,11 @@ export const Select = (props: TextAreaProps) => {
         "p-4 rounded-lg bg-transparent border border-gray-300 mt-4 w-full resize-none transition-colors duration-300 ease-in-out"
       }
     >
-      <option value={""} selected disabled>
+      <option value={""} selected disabled className={"dark:bg-gray-800"}>
         {placeholder}
       </option>
       {options.map((option) => (
-        <option value={option}>{option}</option>
+        <option className={"dark:bg-gray-800"} value={option}>{option}</option>
       ))}
     </select>
   );
