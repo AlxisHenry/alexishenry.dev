@@ -1,7 +1,7 @@
 import locales from "../assets/locales.json";
 
 import { createContext } from "preact";
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 type Locale = {
   icon: string;
@@ -12,7 +12,7 @@ type Locale = {
 export interface LocaleContextType {
   availableLocales: Locale[];
   locale: Locale;
-  setLocale: (locale: Locale) => void;
+  store: (locale: Locale) => void;
 }
 
 interface LocaleProviderProps {
@@ -28,7 +28,7 @@ const defaultLocale: Locale = {
 export const LocaleContext = createContext<LocaleContextType>({
   availableLocales: [],
   locale: defaultLocale,
-  setLocale: () => { },
+  store: () => { },
 });
 
 export const LocaleProvider = (props: LocaleProviderProps) => {
@@ -41,8 +41,21 @@ export const LocaleProvider = (props: LocaleProviderProps) => {
     (l: Locale) => l.code !== locale.code
   );
 
+  const store = (locale: Locale) => {
+    setLocale(locale);
+    localStorage.setItem("locale", JSON.stringify(locale));
+  }
+
+  useEffect(() => {
+    let currentLocale = localStorage.getItem("locale") ?? null;
+    if (currentLocale) {
+      setLocale(JSON.parse(currentLocale) || defaultLocale);
+    }
+  }, []);
+
+
   return (
-    <LocaleContext.Provider value={{ availableLocales, locale, setLocale }}>
+    <LocaleContext.Provider value={{ availableLocales, locale, store }}>
       {children}
     </LocaleContext.Provider>
   );
