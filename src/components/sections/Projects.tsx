@@ -2,10 +2,7 @@ import { useData } from "../../hooks";
 
 import { Title } from "./Title";
 
-interface ProjectsProps {
-}
-
-export const Projects = (props: ProjectsProps) => {
+export const Projects = () => {
   const { projects } = useData();
 
   return (

@@ -1,5 +1,3 @@
-import { useData } from "../../hooks/useData";
-
 interface TextAreaProps {
   placeholder: string;
   name: string;
