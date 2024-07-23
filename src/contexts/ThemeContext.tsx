@@ -26,7 +26,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
       currentTheme = prefersDark ? "dark" : "light";
     }
     apply(currentTheme);
-  }, [theme]);
+  }, []);
 
   function store() {
     const newTheme = theme === "light" ? "dark" : "light";

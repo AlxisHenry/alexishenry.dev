@@ -17,31 +17,31 @@ export const Header = () => {
   );
 };
 
-const LocaleSwitcher = () => {
+export const LocaleSwitcher = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <LocaleContext.Consumer>
       {
-        ({ availableLocales, setLocale }) => (
+        ({ availableLocales, store }) => (
           <div
-            class={"flex gap-3 items-center dark:hover:bg-gray-700 rounded-t-md ease-in-out rounded--t-xl cursor-pointer relative hover:bg-white transition-all duration-300 px-4 py-1"}
+            class={"flex gap-3 items-center dark:hover:bg-gray-700 rounded-t-md ease-in-out cursor-pointer relative hover:bg-white transition-all duration-300 ease-in-out py-1 px-4"}
             onMouseEnter={() => setOpen(!open)}
             onMouseLeave={() => setOpen(false)}
           >
-            <CurrentLocale />
+            <CurrentLocale open={open} />
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: open ? 1 : 0 }}
               transition={{ duration: 0.2 }}
               // @ts-ignore
-              class={`absolute top-10 right-0 bg-white dark:bg-gray-800 shadow-lg rounded-b-md w-full ${open ? "flex" : "hidden"} flex-col gap-2 transition-all duration-300 ease-in-out`}>
-              <div>
+              class={`absolute top-10 right-0 bg-white dark:bg-gray-800 shadow-lg rounded-b-md w-full pb-1 ${open ? "flex" : "hidden"} flex-col gap-2 transition-all duration-300 ease-in-out`}>
+              <div class={"p-0"}>
                 {
                   availableLocales.map((locale) => (
-                    <div class={"flex items-center ml-4 gap-2 py-1"} onClick={() => {
+                    <div class={"px-0 flex items-center ml-4 gap-2 py-1"} onClick={() => {
                       setOpen(false);
-                      setLocale(locale);
+                      store(locale);
                     }}>
                       <ReactCountryFlag
                         countryCode={locale.code}
@@ -55,7 +55,7 @@ const LocaleSwitcher = () => {
                         }}
                       />
                       <p class={"text-lg font-semibold text-gray-500 dark:text-gray-200"}>
-                        {locale.code}
+                        {locale.icon}
                       </p>
                     </div>
                   ))
@@ -69,7 +69,13 @@ const LocaleSwitcher = () => {
   );
 }
 
-const CurrentLocale = () => {
+interface CurrentLocaleProps {
+  open?: boolean;
+}
+
+const CurrentLocale = (props: CurrentLocaleProps) => {
+  const { open = false } = props;
+
   return (
     <LocaleContext.Consumer>
       {
@@ -87,9 +93,14 @@ const CurrentLocale = () => {
               }}
             />
             <p class={"text-lg font-semibold text-gray-500 dark:text-gray-200"}>
-              {locale.code}
+              {locale.icon}
             </p>
-            <ChevronDown size={24} color="#6b7280" />
+            <ChevronDown 
+              size={24} 
+              color="#6b7280"
+              // @ts-ignore
+              style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s" }}
+            />
           </div>
         )
       }
