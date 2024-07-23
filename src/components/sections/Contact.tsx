@@ -7,9 +7,13 @@ import { TextArea } from "../ui/TextArea";
 import { Select } from "../ui/Select";
 import { Spinner } from "../ui/Spinner";
 import { useRoute } from "preact-iso";
+import { useData } from "../../hooks/useData";
+import { type ContactFormField } from "../../types";
 
 export const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const { contact } = useData();
 
   const route = useRoute();
   const { sent = false } = route.query;
@@ -20,41 +24,45 @@ export const Contact = () => {
 
   let nextUrl = location.origin + "/contact?sent=true";
 
+  const getComponentFromField = (field: ContactFormField) => {
+    switch (field.type) {
+      case "text":
+      case "email":
+        return <Input placeholder={field.placeholder} name={field.name} />;
+      case "select":
+        return <Select options={field?.options || []} placeholder={field.placeholder} name={field.name} />;
+      case "textarea":
+        return <TextArea placeholder={field.placeholder} name={field.name} />;
+      default:
+        return null;
+    }
+  }
+
+  const firstRowElements = contact.fields.filter((field) => field.inFirstRow);
+  const subElements = contact.fields.filter((field) => !field.inFirstRow);
+
   return (
     <section class={"mb-14"} id={"contact"}>
-      <Title>
-        <span class={"text-blue-500"}>Contactez</span>-moi
-      </Title>
-      <p class={"mt-8"}>
-        Vous avez une idée ? Un projet ? Découvrons ensemble comment je peux
-        vous aider ! <br /> Merci de donner un maximum de détail sur le projet
-        afin que je puisse évaluer correctement la charge de travail que
-        représente votre projet. Cela permettra aussi d'avoir un premier
-        chiffrage au plus prêt du devis final.
-      </p>
+      <Title content={contact.title} />
+      <p class={"mt-8"} dangerouslySetInnerHTML={{ __html: contact.description }} />
       {sent ? (
-        <p class={"mt-8 bg-green-100 p-4 rounded-lg border border-green-200"}>
-          J'ai bien reçu votre demande, je vous recontacterai dans les plus
-          brefs délais. Merci !
-        </p>
+        <p class={"mt-8 bg-green-100 p-4 rounded-lg border border-green-200"} dangerouslySetInnerHTML={{ __html: contact.submitted }} />
       ) : (
         <form
-          class={"mt-4"}
+          class={"mt-8"}
           action={"https://formsubmit.co/3d56f781c802302b665ebc5d9bf1dcb9 "}
           method={"POST"}
           onSubmit={onSubmit}
         >
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value={nextUrl} />
-          <div class={"grid grid-cols-2 gap-4"}>
-            <Input placeholder={"Nom & Prénom"} name="name" />
-            <Input placeholder={"Email"} type="email" name="email" />
+          <div class={"grid grid-cols-2 gap-2"}>
+            {firstRowElements.map((field) => getComponentFromField(field))}
           </div>
-          <Select placeholder={"Que puis-je faire pour vous ?"} name="reason" />
-          <TextArea placeholder={"Description du projet"} name="description" />
+          {subElements.map((field) => getComponentFromField(field))}
           <div class={"flex justify-start mt-2"}>
             <Button submitting={isSubmitting}>
-              Soumettre ma demande {isSubmitting && <Spinner />}
+              {contact.submitMessage} {isSubmitting && <Spinner />}
             </Button>
           </div>
         </form>

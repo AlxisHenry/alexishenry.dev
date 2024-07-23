@@ -1,0 +1,19 @@
+{
+    "available": [
+        {
+            "icon": "🇫🇷",
+            "name": "Français",
+            "code": "FR"
+        },
+        {
+            "icon": "🇬🇧",
+            "name": "English",
+            "code": "GB"
+        },
+        {
+            "icon": "🇲🇹",
+            "name": "Maltese",
+            "code": "MT"
+        }
+    ]
+}

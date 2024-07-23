@@ -1,9 +1,11 @@
 interface SectionTitleProps {
-  children: React.ReactNode;
+  content: string;
 }
 
 export const Title = (props: SectionTitleProps) => {
-  const { children } = props;
+  const { content } = props;
 
-  return <h2 class={"text-5xl font-semibold"}>{children}</h2>;
+  return <h2 class={"text-5xl font-semibold"} dangerouslySetInnerHTML={{
+    __html: content
+  }} />
 };

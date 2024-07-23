@@ -3,4 +3,12 @@ export {
   type ThemeContextType,
   ThemeProvider,
 } from "./ThemeContext";
-export { DataContext } from "./DataContext";
+export {
+  DataContext,
+  DataProvider
+} from "./DataContext";
+export {
+  LocaleContext,
+  type LocaleContextType,
+  LocaleProvider
+} from "./LocaleContext";

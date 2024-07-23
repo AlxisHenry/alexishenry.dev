@@ -3,12 +3,11 @@ import { useData } from "../../hooks/useData";
 interface TextAreaProps {
   placeholder: string;
   name: string;
+  options: string[];
 }
 
 export const Select = (props: TextAreaProps) => {
-  const { placeholder, name } = props;
-
-  const { contactOptions } = useData();
+  const { placeholder, name, options } = props;
 
   return (
     <select
@@ -21,7 +20,7 @@ export const Select = (props: TextAreaProps) => {
       <option value={""} selected disabled>
         {placeholder}
       </option>
-      {contactOptions.map((option) => (
+      {options.map((option) => (
         <option value={option}>{option}</option>
       ))}
     </select>

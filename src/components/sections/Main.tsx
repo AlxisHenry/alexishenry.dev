@@ -1,36 +1,34 @@
-import { GitHub, Linkedin } from "react-feather";
+import * as Feather from "react-feather";
+
+import { useData } from "../../hooks/useData";
 
 export const Main = () => {
+  const { hero } = useData();
+
   return (
     <main class={"text-2xl flex gap-14 mx-auto flex-col leading-9 h-screen text-center lg:text-left"}>
       <div class={"flex align-center gap-8 justify-center lg:justify-between"}>
         <div>
-          <h1 class={"name"}>Alexis HENRY</h1>
-          <p class={"mt-4"}>
-            Un développeur web & mobile{" "}
-            <span class={"text-blue-500 font-bold"}>passionné</span>.
-          </p>
+          <h1 class={"name"}>{hero.title}</h1>
+          <p class={"mt-4"} dangerouslySetInnerHTML={{ __html: hero.description }} />
           <div class={"flex gap-4 mt-6 justify-center lg:justify-start"}>
-            <a
-              href={"https://github.com/AlxisHenry"}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-              class={
-                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-              }
-            >
-              <GitHub size={38} />
-            </a>
-            <a
-              href={"https://www.linkedin.com/in/alexishenry03/"}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-              class={
-                "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-              }
-            >
-              <Linkedin size={38} />
-            </a>
+            {
+              hero.icons.map((icon) => {
+                // @ts-ignore
+                let Icon = Feather[icon.icon]
+
+                return <a
+                  href={"https://github.com/AlxisHenry"}
+                  target={"_blank"}
+                  rel={"noopener noreferrer"}
+                  class={
+                    "text-blue-400 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+                  }
+                >
+                  <Icon size={38} />
+                </a>
+              })
+            }
           </div>
         </div>
         <div class={"relative hidden lg:block"}>

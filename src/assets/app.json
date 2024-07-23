@@ -1,114 +1,494 @@
 {
-  "services": [
-    {
-      "icon": "Crop",
-      "title": "Site sur mesure",
-      "description": "Vous avez un projet sur mesure ? Je vous accompagne dans la réalisation de votre projet."
+  "GB": {
+    "navigation": {
+      "items": [
+        {
+          "link": "/",
+          "name": "Who am I ?"
+        },
+        {
+          "link": "/projects",
+          "name": "Projects"
+        },
+        {
+          "link": "/contact",
+          "name": "Contact"
+        }
+      ]
     },
-    {
-      "icon": "Package",
-      "title": "Site vitrine & blog",
-      "description": "Vous avez besoin d'un site vitrine ou d'un blog ? Je développe des sites web sur mesure avec WordPress."
+    "hero": {
+      "title": "Alexis HENRY",
+      "description": "A <span class='text-blue-500 font-bold'>passionate</span> web & mobile developer.",
+      "cta": "Discover my services",
+      "image": "",
+      "icons": [
+        {
+          "icon": "GitHub",
+          "link": "https://github.com/AlxisHenry",
+          "target": "_blank"
+        },
+        {
+          "icon": "Linkedin",
+          "link": "https://www.linkedin.com/in/alexishenry03/",
+          "target": "_blank"
+        }
+      ]
     },
-    {
-      "icon": "DollarSign",
-      "title": "Intégration shopify",
-      "description": "Je maîtrise l'intégration de thèmes Shopify et le développement de fonctionnalités sur mesure."
+    "services": {
+      "title": "My <span class='text-blue-500'>services</span>",
+      "description": "",
+      "items": [
+        {
+          "icon": "Crop",
+          "title": "Custom website",
+          "description": "Do you have a custom project? I support you in the realization of your project."
+        },
+        {
+          "icon": "Package",
+          "title": "Showcase & blog",
+          "description": "Do you need a showcase or a blog? I develop custom websites with WordPress."
+        },
+        {
+          "icon": "DollarSign",
+          "title": "Shopify integration",
+          "description": "I master the integration of Shopify themes and the development of custom features."
+        },
+        {
+          "icon": "Database",
+          "title": "Laravel",
+          "description": "PHP is a language that I master perfectly. I develop custom web applications with Laravel."
+        },
+        {
+          "icon": "Layout",
+          "title": "React & Next.js",
+          "description": "For the development of dynamic and responsive applications, I master React and Next.js."
+        },
+        {
+          "icon": "Tablet",
+          "title": "Mobile applications",
+          "description": "Are you looking for someone to develop a mobile application? I have significant experience with React Native."
+        }
+      ]
     },
-    {
-      "icon": "Database",
-      "title": "Laravel",
-      "description": "PHP est un langage que je maîtrise parfaitement. Je développe des applications web sur mesure avec Laravel."
+    "projects": {
+      "title": "My <span class='text-blue-500'>projects</span>",
+      "empty": "No projects yet.",
+      "description": "",
+      "items": []
     },
-    {
-      "icon": "Layout",
-      "title": "React & Next.js",
-      "description": "Pour le développement d'applications dynamiques et réactives, je maîtrise React et Next.js."
+    "faq": {
+      "title": "Frequently <span class='text-blue-500'>asked</span> questions",
+      "description": "",
+      "items": [
+        {
+          "question": "What are my availabilities ?",
+          "answer": "I am currently <h>available</h> for new missions."
+        },
+        {
+          "question": "What are my rates ?",
+          "answer": "The pricing depends on the project and especially on the time that will be necessary to carry it out. As an indication, my average daily rate is around <h>400€/day</h>."
+        },
+        {
+          "question": "Do I travel ?",
+          "answer": "Based in <h>Strasbourg</h> I can travel in the surrounding areas for missions in person. But I am more comfortable working remotely."
+        },
+        {
+          "question": "What are my guarantees ?",
+          "answer": "I undertake to provide you with <h>quality</h> work, within the time limits. I also undertake to respect the confidentiality of your data. Depending on the project, I undertake to provide you with support after delivery of the project as well as updates if necessary."
+        },
+        {
+          "question": "What are my areas of expertise ?",
+          "answer": "I specialize in web and mobile development. I can create custom websites, web and mobile applications, APIs, applications..."
+        }
+      ]
     },
-    {
-      "icon": "Tablet",
-      "title": "Applications mobiles",
-      "description": "Vous recherchez une personne pour développer une application mobile ? J'ai une expérience significative avec React Native."
+    "workingTogether": {
+      "title": "We work <span class='text-blue-500'>together</span> ?",
+      "description": "Do you have a web or mobile development project? Do you need a developer to support you in the realization of your project? I'm here to help you!",
+      "steps": [
+        {
+          "title": "Definition of the need",
+          "description": "We discuss your project, your needs and expectations. I propose solutions adapted to your project."
+        },
+        {
+          "title": "Development",
+          "description": "I develop your project while respecting good development practices. I keep you informed of the progress of the project."
+        },
+        {
+          "title": "Delivery",
+          "description": "I deliver your project. I support you in taking charge of your project and I train you if necessary."
+        },
+        {
+          "title": "Follow-up & maintenance",
+          "description": "I remain available to support you in the evolution of your project. I offer you updates if necessary."
+        }
+      ]
+    },
+    "contact": {
+      "title": "<span class='text-blue-500'>Contact</span> me",
+      "description": "Do you have an idea? A project? Let's discover together how I can help you! Please provide as much detail as possible about the project so that I can properly assess the workload that your project represents. This will also allow for a first estimate as close as possible to the final quote.",
+      "submitMessage": "Submit my request",
+      "submitted": "I have received your request, I will contact you as soon as possible. Thank you!",
+      "fields": [
+        {
+          "inFirstRow": true,
+          "type": "text",
+          "name": "name",
+          "placeholder": "Your name"
+        },
+        {
+          "inFirstRow": true,
+          "type": "email",
+          "name": "email",
+          "placeholder": "Your email"
+        },
+        {
+          "type": "select",
+          "name": "object",
+          "placeholder": "What can I help you with ?",
+          "options": [
+            "Showcase website",
+            "Creating a blog",
+            "E-commerce store",
+            "Web application",
+            "Mobile application",
+            "Other"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "description",
+          "placeholder": "Project description"
+        }
+      ]
     }
-  ],
-  "frequentlyAskedQuestions": [
-    {
-      "question": "Quels sont mes disponibilités ?",
-      "answer": "Je suis actuellement <h>disponible</h> pour de nouvelles missions."
+  },
+  "FR": {
+    "navigation": {
+      "items": [
+        {
+          "link": "/",
+          "name": "Qui suis-je ?"
+        },
+        {
+          "link": "/projects",
+          "name": "Réalisations"
+        },
+        {
+          "link": "/contact",
+          "name": "Contact"
+        }
+      ]
     },
-    {
-      "question": "Quels sont mes tarifs ?",
-      "answer": "La tarification dépend du projet et surtout du temps qui sera nécessaire pour le mener à bien. À titre indicatif mon tarif journalier moyen se situe aux alentour de <h>400€/jour</h>."
+    "hero": {
+      "title": "Alexis HENRY",
+      "description": "Un développeur web & mobile <span class='text-blue-500 font-bold'>passionné</span>.",
+      "cta": "Découvrir mes services",
+      "image": "",
+      "icons": [
+        {
+          "icon": "GitHub",
+          "link": "https://github.com/AlxisHenry",
+          "target": "_blank"
+        },
+        {
+          "icon": "Linkedin",
+          "link": "https://www.linkedin.com/in/alexishenry03/",
+          "target": "_blank"
+        }
+      ]
     },
-    {
-      "question": "Est-ce que je me déplace ?",
-      "answer": "Etant basé à <h>Strasbourg</h> je peux me déplacer dans les alentours pour des missions en présentiel. Mais je suis plus à l'aise pour travailler à distance."
+    "services": {
+      "title": "Mes <span class='text-blue-500'>services</span>",
+      "description": "",
+      "items": [
+        {
+          "icon": "Crop",
+          "title": "Site sur mesure",
+          "description": "Vous avez un projet sur mesure ? Je vous accompagne dans la réalisation de votre projet."
+        },
+        {
+          "icon": "Package",
+          "title": "Site vitrine & blog",
+          "description": "Vous avez besoin d'un site vitrine ou d'un blog ? Je développe des sites web sur mesure avec WordPress."
+        },
+        {
+          "icon": "DollarSign",
+          "title": "Intégration shopify",
+          "description": "Je maîtrise l'intégration de thèmes Shopify et le développement de fonctionnalités sur mesure."
+        },
+        {
+          "icon": "Database",
+          "title": "Laravel",
+          "description": "PHP est un langage que je maîtrise parfaitement. Je développe des applications web sur mesure avec Laravel."
+        },
+        {
+          "icon": "Layout",
+          "title": "React & Next.js",
+          "description": "Pour le développement d'applications dynamiques et réactives, je maîtrise React et Next.js."
+        },
+        {
+          "icon": "Tablet",
+          "title": "Applications mobiles",
+          "description": "Vous recherchez une personne pour développer une application mobile ? J'ai une expérience significative avec React Native."
+        }
+      ]
     },
-    {
-      "question": "Quelles sont mes garanties ?",
-      "answer": "Je m'engage à vous fournir un travail de <h>qualité</h>, dans les délais impartis. Je m'engage également à respecter la confidentialité de vos données. En fonction du projet je m'engage à vous fournir un support après livraison du projet ainsi que des mises à jour si nécessaire."
+    "projects": {
+      "title": "Mes <span class='text-blue-500'>projets</span>",
+      "empty": "Aucun projet pour le moment.",
+      "description": "",
+      "items": []
     },
-    {
-      "question": "Quels sont mes domaines d'expertises ?",
-      "answer": "Je suis spécialisé dans le développement web et mobile. Je peux réaliser des sites web sur mesure, des applications web et mobiles, des API, des application..."
+    "faq": {
+      "title": "Questions <span class='text-blue-500'>fréquentes</span>",
+      "description": "",
+      "items": [
+        {
+          "question": "Quels sont mes disponibilités ?",
+          "answer": "Je suis actuellement <h>disponible</h> pour de nouvelles missions."
+        },
+        {
+          "question": "Quels sont mes tarifs ?",
+          "answer": "La tarification dépend du projet et surtout du temps qui sera nécessaire pour le mener à bien. À titre indicatif mon tarif journalier moyen se situe aux alentour de <h>400€/jour</h>."
+        },
+        {
+          "question": "Est-ce que je me déplace ?",
+          "answer": "Etant basé à <h>Strasbourg</h> je peux me déplacer dans les alentours pour des missions en présentiel. Mais je suis plus à l'aise pour travailler à distance."
+        },
+        {
+          "question": "Quelles sont mes garanties ?",
+          "answer": "Je m'engage à vous fournir un travail de <h>qualité</h>, dans les délais impartis. Je m'engage également à respecter la confidentialité de vos données. En fonction du projet je m'engage à vous fournir un support après livraison du projet ainsi que des mises à jour si nécessaire."
+        },
+        {
+          "question": "Quels sont mes domaines d'expertises ?",
+          "answer": "Je suis spécialisé dans le développement web et mobile. Je peux réaliser des sites web sur mesure, des applications web et mobiles, des API, des application..."
+        }
+      ]
+    },
+    "workingTogether": {
+      "title": "On travaille <span class='text-blue-500'>ensemble</span> ?",
+      "description": "Vous avez un projet de développement web ou mobile ? Vous avez besoin d'un développeur pour vous accompagner dans la réalisation de votre projet ? Je suis là pour vous aider !",
+      "steps": [
+        {
+          "title": "Définition du besoin",
+          "description": "Nous échangeons sur votre projet, vos besoins et vos attentes. Je vous propose des solutions adaptées à votre projet."
+        },
+        {
+          "title": "Développement",
+          "description": "Je développe votre projet en respectant les bonnes pratiques de développement. Je vous tiens informé de l'avancée du projet."
+        },
+        {
+          "title": "Livraison",
+          "description": "Je vous livre votre projet. Je vous accompagne dans la prise en main de votre projet et je vous forme si nécessaire."
+        },
+        {
+          "title": "Suivi & maintenance",
+          "description": "Je reste disponible pour vous accompagner dans l'évolution de votre projet. Je vous propose des mises à jour si nécessaire."
+        }
+      ]
+    },
+    "contact": {
+      "title": "<span class='text-blue-500'>Contactez</span>-moi",
+      "description": "Vous avez une idée ? Un projet ? Découvrons ensemble comment je peux vous aider ! Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus prêt du devis final.",
+      "submitMessage": "Soumettre ma demande",
+      "submitted": "J'ai bien reçu votre demande, je vous recontacterai dans les plus brefs délais. Merci !",
+      "fields": [
+        {
+          "inFirstRow": true,
+          "type": "text",
+          "name": "name",
+          "placeholder": "Nom & Prénom"
+        },
+        {
+          "inFirstRow": true,
+          "type": "email",
+          "name": "email",
+          "placeholder": "Email"
+        },
+        {
+          "type": "select",
+          "name": "object",
+          "placeholder": "Que puis-je faire pour vous ?",
+          "options": [
+            "Site vitrine",
+            "Création d'un blog",
+            "Boutique e-commerce",
+            "Application web",
+            "Application mobile",
+            "Autre"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "description",
+          "placeholder": "Description du projet"
+        }
+      ]
     }
-  ],
-  "projects": [
-    {
-      "title": "Epigrades",
-      "description": "Développement d'une application web pour la gestion des notes des élèves.",
-      "stack": ["Next.js", "TypeScript", "Puppeteer"]
+  },
+  "MT": {
+    "navigation": {
+      "items": [
+        {
+          "link": "/",
+          "name": "Who am I ?"
+        },
+        {
+          "link": "/projects",
+          "name": "Projects"
+        },
+        {
+          "link": "/contact",
+          "name": "Contact"
+        }
+      ]
     },
-    {
-      "title": "Syl'services",
-      "description": "Développement d'une application de gestion de stock.",
-      "stack": ["Laravel", "Livewire", "TailwindCSS"]
+    "hero": {
+      "title": "Alexis HENRY",
+      "description": "A <span class='text-blue-500 font-bold'>passionate</span> web & mobile developer.",
+      "cta": "Discover my services",
+      "image": "",
+      "icons": [
+        {
+          "icon": "GitHub",
+          "link": "https://github.com/AlxisHenry",
+          "target": "_blank"
+        },
+        {
+          "icon": "Linkedin",
+          "link": "https://www.linkedin.com/in/alexishenry03/",
+          "target": "_blank"
+        }
+      ]
     },
-    {
-      "title": "Portfolio",
-      "description": "Développement de mon portfolio personnel.",
-      "stack": ["Preact", "TailwindCSS"]
+    "services": {
+      "title": "My <span class='text-blue-500'>services</span>",
+      "description": "",
+      "items": [
+        {
+          "icon": "Crop",
+          "title": "Custom website",
+          "description": "Do you have a custom project? I support you in the realization of your project."
+        },
+        {
+          "icon": "Package",
+          "title": "Showcase & blog",
+          "description": "Do you need a showcase or a blog? I develop custom websites with WordPress."
+        },
+        {
+          "icon": "DollarSign",
+          "title": "Shopify integration",
+          "description": "I master the integration of Shopify themes and the development of custom features."
+        },
+        {
+          "icon": "Database",
+          "title": "Laravel",
+          "description": "PHP is a language that I master perfectly. I develop custom web applications with Laravel."
+        },
+        {
+          "icon": "Layout",
+          "title": "React & Next.js",
+          "description": "For the development of dynamic and responsive applications, I master React and Next.js."
+        },
+        {
+          "icon": "Tablet",
+          "title": "Mobile applications",
+          "description": "Are you looking for someone to develop a mobile application? I have significant experience with React Native."
+        }
+      ]
     },
-    {
-      "title": "E-commerce",
-      "description": "Développement d'une boutique en ligne.",
-      "stack": ["React", "Node.js", "MongoDB"]
+    "projects": {
+      "title": "My <span class='text-blue-500'>projects</span>",
+      "empty": "No projects yet.",
+      "description": "",
+      "items": []
     },
-    {
-      "title": "Blog",
-      "description": "Développement d'un blog avec WordPress.",
-      "stack": ["WordPress", "PHP", "MySQL"]
+    "faq": {
+      "title": "Frequently <span class='text-blue-500'>asked</span> questions",
+      "description": "",
+      "items": [
+        {
+          "question": "What are my availabilities ?",
+          "answer": "I am currently <h>available</h> for new missions."
+        },
+        {
+          "question": "What are my rates ?",
+          "answer": "The pricing depends on the project and especially on the time that will be necessary to carry it out. As an indication, my average daily rate is around <h>400€/day</h>."
+        },
+        {
+          "question": "Do I travel ?",
+          "answer": "Based in <h>Strasbourg</h> I can travel in the surrounding areas for missions in person. But I am more comfortable working remotely."
+        },
+        {
+          "question": "What are my guarantees ?",
+          "answer": "I undertake to provide you with <h>quality</h> work, within the time limits. I also undertake to respect the confidentiality of your data. Depending on the project, I undertake to provide you with support after delivery of the project as well as updates if necessary."
+        },
+        {
+          "question": "What are my areas of expertise ?",
+          "answer": "I specialize in web and mobile development. I can create custom websites, web and mobile applications, APIs, applications..."
+        }
+      ]
     },
-    {
-      "title": "Application mobile",
-      "description": "Développement d'une application mobile pour la gestion des tâches.",
-      "stack": ["React Native", "Expo"]
+    "workingTogether": {
+      "title": "We work <span class='text-blue-500'>together</span> ?",
+      "description": "Do you have a web or mobile development project? Do you need a developer to support you in the realization of your project? I'm here to help you!",
+      "steps": [
+        {
+          "title": "Definition of the need",
+          "description": "We discuss your project, your needs and expectations. I propose solutions adapted to your project."
+        },
+        {
+          "title": "Development",
+          "description": "I develop your project while respecting good development practices. I keep you informed of the progress of the project."
+        },
+        {
+          "title": "Delivery",
+          "description": "I deliver your project. I support you in taking charge of your project and I train you if necessary."
+        },
+        {
+          "title": "Follow-up & maintenance",
+          "description": "I remain available to support you in the evolution of your project. I offer you updates if necessary."
+        }
+      ]
+    },
+    "contact": {
+      "title": "<span class='text-blue-500'>Contact</span> me",
+      "description": "Do you have an idea? A project? Let's discover together how I can help you! Please provide as much detail as possible about the project so that I can properly assess the workload that your project represents. This will also allow for a first estimate as close as possible to the final quote.",
+      "submitMessage": "Submit my request",
+      "submitted": "I have received your request, I will contact you as soon as possible. Thank you!",
+      "fields": [
+        {
+          "type": "text",
+          "name": "name",
+          "placeholder": "Your name",
+          "inFirstRow": true
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "placeholder": "Your email",
+          "inFirstRow": true
+        },
+        {
+          "type": "select",
+          "name": "object",
+          "placeholder": "What can I help you with ?",
+          "options": [
+            "Showcase website",
+            "Creating a blog",
+            "E-commerce store",
+            "Web application",
+            "Mobile application",
+            "Other"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "description",
+          "placeholder": "Project description"
+        }
+      ]
     }
-  ],
-  "workingTogetherSteps": [
-    {
-      "title": "Définition du besoin",
-      "description": "Nous échangeons sur votre projet, vos besoins et vos attentes. Je vous propose des solutions adaptées à votre projet."
-    },
-    {
-      "title": "Développement",
-      "description": "Je développe votre projet en respectant les bonnes pratiques de développement. Je vous tiens informé de l'avancée du projet."
-    },
-    {
-      "title": "Livraison",
-      "description": "Je vous livre votre projet. Je vous accompagne dans la prise en main de votre projet et je vous forme si nécessaire."
-    },
-    {
-      "title": "Suivi & maintenance",
-      "description": "Je reste disponible pour vous accompagner dans l'évolution de votre projet. Je vous propose des mises à jour si nécessaire."
-    }
-  ],
-  "contactOptions": [
-    "Site vitrine",
-    "Création d'un blog",
-    "Boutique e-commerce",
-    "Application web",
-    "Application mobile",
-    "Autre"
-  ]
+  }
 }

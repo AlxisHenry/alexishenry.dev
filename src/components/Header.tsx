@@ -1,7 +1,9 @@
 import { useState } from "preact/hooks";
-import { ThemeContext } from "../contexts";
-import { Menu, Moon, Sun } from "react-feather";
+import { LocaleContext } from "../contexts";
+import { ChevronDown, Menu } from "react-feather";
 import { motion } from "framer-motion"
+import { useData } from "../hooks/useData";
+import ReactCountryFlag from "react-country-flag";
 
 export const Header = () => {
   return (
@@ -15,27 +17,85 @@ export const Header = () => {
   );
 };
 
-const ThemeSwitcher = () => {
+const LocaleSwitcher = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <ThemeContext.Consumer>
-      {(t) => (
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ rotate: 90, scale: 0.9 }}>
-          <button
-            class={
-              "text-xl dark:text-gray-200 font-semibold hover:text-blue-500 text-gray-500 transition-all duration-300 ease-in-out transform dark:hover:text-blue-500"
-            }
-            onClick={() => {
-              if (!t.store) return;
-              t.store(t.theme == "light" ? "dark" : "light");
-            }}
+    <LocaleContext.Consumer>
+      {
+        ({ availableLocales, setLocale }) => (
+          <div
+            class={"flex gap-3 items-center dark:hover:bg-gray-700 rounded-t-md ease-in-out rounded--t-xl cursor-pointer relative hover:bg-white transition-all duration-300 px-4 py-1"}
+            onMouseEnter={() => setOpen(!open)}
+            onMouseLeave={() => setOpen(false)}
           >
-            {t.theme == "dark" ? <Moon size={28} /> : <Sun size={28} />}
-          </button>
-        </motion.div>
-      )}
-    </ThemeContext.Consumer>
+            <CurrentLocale />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: open ? 1 : 0 }}
+              transition={{ duration: 0.2 }}
+              // @ts-ignore
+              class={`absolute top-10 right-0 bg-white dark:bg-gray-800 shadow-lg rounded-b-md w-full ${open ? "flex" : "hidden"} flex-col gap-2 transition-all duration-300 ease-in-out`}>
+              <div>
+                {
+                  availableLocales.map((locale) => (
+                    <div class={"flex items-center ml-4 gap-2 py-1"} onClick={() => {
+                      setOpen(false);
+                      setLocale(locale);
+                    }}>
+                      <ReactCountryFlag
+                        countryCode={locale.code}
+                        svg
+                        style={{
+                          width: '.8em',
+                          borderRadius: '50%',
+                          boxShadow: '0 0 0 1px #000',
+                          objectFit: 'cover',
+                          height: '.8em',
+                        }}
+                      />
+                      <p class={"text-lg font-semibold text-gray-500 dark:text-gray-200"}>
+                        {locale.code}
+                      </p>
+                    </div>
+                  ))
+                }
+              </div>
+            </motion.div>
+          </div>
+        )
+      }
+    </LocaleContext.Consumer >
   );
-};
+}
+
+const CurrentLocale = () => {
+  return (
+    <LocaleContext.Consumer>
+      {
+        ({ locale }) => (
+          <div class={"flex items-center gap-2 py-1"}>
+            <ReactCountryFlag
+              countryCode={locale.code}
+              svg
+              style={{
+                width: '.8em',
+                borderRadius: '50%',
+                boxShadow: '0 0 0 1px #000',
+                objectFit: 'cover',
+                height: '.8em',
+              }}
+            />
+            <p class={"text-lg font-semibold text-gray-500 dark:text-gray-200"}>
+              {locale.code}
+            </p>
+            <ChevronDown size={24} color="#6b7280" />
+          </div>
+        )
+      }
+    </LocaleContext.Consumer>
+  )
+}
 
 export const Logo = () => {
   return (
@@ -48,37 +108,27 @@ export const Logo = () => {
   );
 };
 
-const tabs = [
-  {
-    link: "/",
-    name: "Qui suis-je ?",
-  }, {
-    link: "/projects",
-    name: "Réalisations",
-  },
-  {
-    link: "/contact",
-    name: "Contact",
-  },
-];
-
 const Navigation = () => {
   const [currentTab, setCurrentTab] = useState(window.location.pathname);
 
+  const { navigation } = useData();
+
   return (
-    <nav class={"hidden lg:flex gap-12"}>
-      {tabs.map((tab) => (
-        <NavLink
-          active={tab.link == currentTab}
-          link={tab.link}
-          onClick={() => {
-            setCurrentTab(tab.link);
-          }}
-        >
-          {tab.name}
-        </NavLink>
-      ))}
-      <ThemeSwitcher />
+    <nav class={"hidden lg:flex gap-8 items-center"}>
+      <div class={"flex gap-12 h-full items-center"}>
+        {navigation.items.map((tab) => (
+          <NavLink
+            active={tab.link == currentTab}
+            link={tab.link}
+            onClick={() => {
+              setCurrentTab(tab.link);
+            }}
+          >
+            {tab.name}
+          </NavLink>
+        ))}
+      </div>
+      <LocaleSwitcher />
     </nav>
   );
 };
@@ -86,6 +136,8 @@ const Navigation = () => {
 const ResponsiveNavigation = () => {
   const [currentTab, setCurrentTab] = useState(window.location.pathname);
   const [open, setOpen] = useState(false);
+
+  const { navigation } = useData();
 
   return (
     <div class={"lg:hidden flex justify-between items-center gap-6"}>
@@ -108,7 +160,7 @@ const ResponsiveNavigation = () => {
         transition={{ duration: 0.2 }}
 
       >
-        {tabs.map((tab) => (
+        {navigation.items.map((tab) => (
           <NavLink
             active={tab.link == currentTab}
             link={tab.link}
@@ -121,7 +173,6 @@ const ResponsiveNavigation = () => {
           </NavLink>
         ))}
       </motion.nav>
-      <ThemeSwitcher />
     </div>
   );
 }

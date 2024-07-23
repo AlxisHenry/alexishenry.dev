@@ -10,12 +10,11 @@ export const Services = () => {
 
   return (
     <section>
-      <Title>
-        Mes <span class={"text-blue-500"}>services</span>
-      </Title>
+      <Title content={services.title} />
+      <p class={"mt-8"} dangerouslySetInnerHTML={{ __html: services.description }} />
       <div>
         <div class={"grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 lg:grid-cols-3"}>
-          {services.map((service) => (
+          {services.items.map((service) => (
             <Service {...service} />
           ))}
         </div>

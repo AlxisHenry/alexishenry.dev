@@ -6,16 +6,15 @@ import { useData } from "../../hooks";
 import { Title } from "./Title";
 
 export const FrequentlyAskedQuestions = () => {
-  const { frequentlyAskedQuestions } = useData();
+  const { faq } = useData();
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   return (
     <section>
-      <Title>
-        Questions <span class={"text-blue-500"}>fréquentes</span>
-      </Title>
+      <Title content={faq.title} />
+      <p class={"mt-8"} dangerouslySetInnerHTML={{ __html: faq.description }} />
       <div class={"mt-8 grid gap-2"}>
-        {frequentlyAskedQuestions.map((q, index) => (
+        {faq.items.map((q, index) => (
           <Question
             {...q}
             open={currentQuestion === index}

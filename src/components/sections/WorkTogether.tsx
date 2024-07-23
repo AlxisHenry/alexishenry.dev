@@ -4,20 +4,14 @@ import { motion } from "framer-motion";
 import { Title } from "./Title";
 
 export const WorkTogether = () => {
-  const { workingTogetherSteps } = useData();
+  const { workingTogether } = useData();
 
   return (
     <section>
-      <Title>
-        On travaille <span class={"text-blue-500"}>ensemble</span> ?
-      </Title>
-      <p class={"mt-8"}>
-        Vous avez un projet de développement web ou mobile ? Vous avez besoin
-        d'un développeur pour vous accompagner dans la réalisation de votre
-        projet ? Je suis là pour vous aider !
-      </p>
+      <Title content={workingTogether.title} />
+      <p class={"mt-8"} dangerouslySetInnerHTML={{ __html: workingTogether.description }} />
       <div class={"grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2"}>
-        {workingTogetherSteps.map((step, index) => (
+        {workingTogether.steps.map((step, index) => (
           <Step {...step} key={index} i={index} />
         ))}
       </div>
