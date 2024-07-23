@@ -136,8 +136,8 @@ const ProjectCard = (props: ProjectCardProps) => {
   const location = useLocation();
 
   return (
-    <div class={"w-full flex flex-col gap-4 text-justify cursor-pointer"}>
-      <div class={"relative min-w-[960px] min-h-[480px]"}>
+    <div class={"w-full min-w-[960px] min-h-[480px] flex flex-col gap-4 text-justify cursor-pointer"}>
+      <div class={"relative"}>
         <img src={project.thumbnail} alt={project.title} class={"w-full min-w-[960px] object-cover rounded-2xl filter brightness-[30%]"} />
         <div class={"absolute left-4 top-4 p-4 bottom-4 right-4 flex flex-col items-center justify-center text-white"}>
           <div class={"text-white filter brightness-[100%]"}>
