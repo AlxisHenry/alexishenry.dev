@@ -1,4 +1,4 @@
-import { LocaleSwitcher, Logo } from "./Header.tsx";
+import { Logo } from "./Header.tsx";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../contexts";
 import { Moon, Sun } from "react-feather";
@@ -7,12 +7,12 @@ import { Moon, Sun } from "react-feather";
 export const Footer = () => {
   return (
     <footer class={"py-8 mb-12 mt-16"}>
-      <div class={"container mx-auto flex align-center justify-center"}>
-        <Logo />
-      </div>
-      <div class={"mt-4 flex items-center justify-center w-full mx-auto flex-col-reverse gap-2 sm:gap-0 sm:flex-row"}>
-        <LocaleSwitcher />
-        <ThemeSwitcher />
+      <div class={"content relative container mx-auto flex justify-between"}>
+        <div class={"hidden lg:block"}>&nbsp;</div>
+        <Logo small />
+        <div class={"flex items-end mb-1"}>
+          <ThemeSwitcher />
+        </div>
       </div>
     </footer>
   );

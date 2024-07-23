@@ -108,10 +108,18 @@ const CurrentLocale = (props: CurrentLocaleProps) => {
   )
 }
 
-export const Logo = () => {
+interface LogoProps {
+  small?: boolean;
+}
+
+export const Logo = (props: LogoProps) => {
+  const { small = false } = props;
+
+  let fontSize = small ? "text-xl md:text-2xl" : "text-2xl md:text-4xl";
+
   return (
     <a class={"p-0 select-none"} href={"/"}>
-      <h1 class={"text-2xl md:text-4xl font-thin"}>
+      <h1 class={"font-thin " + fontSize}>
         <span className={"italic"}>alexis</span>
         <span class={"font-extrabold text-blue-500"}>henry.</span>
       </h1>
