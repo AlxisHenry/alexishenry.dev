@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout";
 import { Title } from "../components/sections/Title.tsx";
-import { useData } from "../hooks/useData.ts";
+// import { useData } from "../hooks/useData.ts";
 
 interface ProjectProps {
   slug: string;
@@ -8,8 +8,6 @@ interface ProjectProps {
 
 const Project = (props: ProjectProps) => {
   const { slug } = props;
-
-  const { projects } = useData();
 
   return (
     <Layout isView>

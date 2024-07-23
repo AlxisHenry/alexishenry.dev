@@ -9,7 +9,7 @@ import {
 
 const Home = lazy(() => import("./routes/Home"));
 const Projects = lazy(() => import("./routes/Projects"));
-const Project = lazy(() => import("./routes/Project"));
+// const Project = lazy(() => import("./routes/Project"));
 const Contact = lazy(() => import("./routes/Contact"));
 const NotFound = lazy(() => import("./routes/NotFound"));
 
