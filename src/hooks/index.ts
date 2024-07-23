@@ -1,3 +1,4 @@
 export { useData } from './useData'
-export { useLocale } from './useLocale'
 export { useTheme } from './useTheme'
+export { useProject } from './useProject'
+export { useLocale } from './useLocale'

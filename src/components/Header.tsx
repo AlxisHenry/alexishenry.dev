@@ -201,7 +201,7 @@ const NavLink = (props: NavLinkProps) => {
   return (
     <a
       onClick={onClick}
-      class={`text-xl font-semibold hover:text-blue-500 transition-colors duration-300 ease-in-out border-b-2 border-transparent hover:border-blue-500 ${active ? "border-b-blue-500 text-blue-500" : "text-gray-500 dark:text-gray-200"
+      class={`text-xl font-semibold hover:text-blue-500 transition-colors duration-300 ease-in-out border-b-2 border-transparent ${active ? "text-blue-500" : "text-gray-500 dark:text-gray-200"
         }`}
       href={link}
     >

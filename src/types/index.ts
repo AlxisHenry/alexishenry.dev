@@ -57,13 +57,20 @@ type WorkingTogetherStep = {
 
 type ProjectsSection = Section & {
   empty: string;
+  viewProject: string;
   items: Project[];
 };
 
-type Project = {
+export type Project = {
+  slug: string;
+  thumbnail: string;
+  stack: string[];
   title: string;
   description: string;
-  stack: string[];
+  links: {
+    github?: string;
+    preview?: string;
+  }
 };
 
 type FaqSection = Section & {

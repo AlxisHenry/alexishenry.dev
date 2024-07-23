@@ -79,3 +79,8 @@ button:hover .button__arrow {
 button:disabled {
   opacity: 0.85;
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

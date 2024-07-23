@@ -21,6 +21,7 @@ export const DataContext = createContext<Data>({
   },
   projects: {
     title: "",
+    viewProject: "",
     empty: "",
     description: "",
     items: []

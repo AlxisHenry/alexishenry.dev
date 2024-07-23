@@ -12,3 +12,8 @@ export {
   type LocaleContextType,
   LocaleProvider
 } from "./LocaleContext";
+export {
+  ProjectContext,
+  type ProjectContextType,
+  ProjectProvider
+} from "./ProjectContext";
