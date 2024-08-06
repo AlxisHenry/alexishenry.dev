@@ -1,9 +1,9 @@
 import * as Feather from "react-feather";
 import { motion } from "framer-motion";
 
-import { useData } from "../../hooks";
+import { useData } from "@/hooks";
 
-import { Title } from "./Title";
+import { Title } from "@/components/sections";
 
 export const Services = () => {
   const { services } = useData();
@@ -11,11 +11,18 @@ export const Services = () => {
   return (
     <section>
       <Title content={services.title} />
-      <p class={"mt-8"} dangerouslySetInnerHTML={{ __html: services.description }} />
+      <p
+        className={"mt-8"}
+        dangerouslySetInnerHTML={{ __html: services.description }}
+      />
       <div>
-        <div class={"grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 lg:grid-cols-3"}>
+        <div
+          className={
+            "grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 lg:grid-cols-3"
+          }
+        >
           {services.items.map((service) => (
-            <Service {...service} />
+            <Service key={service.title} {...service} />
           ))}
         </div>
       </div>
@@ -31,7 +38,7 @@ interface ServiceProps {
 
 const Service = (props: ServiceProps) => {
   const { title, description, icon } = props;
-  
+
   // @ts-ignore
   const Icon = Feather[icon];
 
@@ -40,16 +47,16 @@ const Service = (props: ServiceProps) => {
       whileHover={{ scale: 1.025 }}
       transition={{ duration: 0.2 }}
       // @ts-ignore
-      class={
+      className={
         "p-8 border border-gray-300 rounded-lg transition-colors duration-300 ease-in-out hover:border-blue-500"
       }
     >
       <div>
-        <div class={"flex gap-3 items-start"}>
+        <div className={"flex gap-3 items-start"}>
           {<Icon size={32} color={"#2563EB"} />}
-          <h3 class={"text-xl font-semibold"}>{title}</h3>
+          <h3 className={"text-xl font-semibold"}>{title}</h3>
         </div>
-        <p class={"mt-4 text-gray-500 dark:text-gray-200"}>{description}</p>
+        <p className={"mt-4 text-gray-500 dark:text-gray-200"}>{description}</p>
       </div>
     </motion.div>
   );

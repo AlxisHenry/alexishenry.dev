@@ -1,48 +1,51 @@
-import app from "../assets/app.json"
-import { createContext } from "preact";
-import { Data } from "../types";
-import { useLocale } from "../hooks";
+"use client";
+
+import { createContext } from "react";
+import app from "@/assets/app.json";
+
+import { Data } from "@/types";
+import { useLocale } from "@/hooks";
 
 export const DataContext = createContext<Data>({
   navigation: {
-    items: []
+    items: [],
   },
   hero: {
     title: "",
     description: "",
     cta: "",
     image: "",
-    icons: []
+    icons: [],
   },
   services: {
     title: "",
     description: "",
-    items: []
+    items: [],
   },
   projects: {
     title: "",
     viewProject: "",
     empty: "",
     description: "",
-    items: []
+    items: [],
   },
   faq: {
     title: "",
     description: "",
-    items: []
+    items: [],
   },
   workingTogether: {
     title: "",
     description: "",
-    steps: []
+    steps: [],
   },
   contact: {
     title: "",
     description: "",
     submitted: "",
     submitMessage: "",
-    fields: []
-  }
+    fields: [],
+  },
 });
 
 interface DataProviderProps {
@@ -55,9 +58,7 @@ export const DataProvider = (props: DataProviderProps) => {
   const { locale } = useLocale();
 
   return (
-    <DataContext.Provider value={
-      app[locale.code as keyof typeof app]
-    }>
+    <DataContext.Provider value={app[locale.code as keyof typeof app]}>
       {children}
     </DataContext.Provider>
   );

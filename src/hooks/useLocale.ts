@@ -1,6 +1,7 @@
-import { useContext } from "preact/hooks";
-import { LocaleContext, LocaleContextType } from "../contexts";
+import { useContext } from "react";
 
-export function useLocale(): LocaleContextType  {
-    return useContext(LocaleContext);
+import { LocaleContext, LocaleContextType } from "@/contexts";
+
+export function useLocale(): LocaleContextType {
+  return useContext(LocaleContext);
 }

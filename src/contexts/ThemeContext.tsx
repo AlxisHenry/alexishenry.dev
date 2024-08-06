@@ -1,5 +1,7 @@
-import { createContext } from "preact";
-import { useEffect, useState } from "preact/hooks";
+"use client";
+
+import { createContext } from "react";
+import { useEffect, useState } from "react";
 
 export interface ThemeContextType {
   theme: string;
@@ -12,7 +14,7 @@ interface ThemeProviderProps {
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: "dark",
-  store: () => { },
+  store: () => {},
 });
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
@@ -21,7 +23,9 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
   useEffect(() => {
     let currentTheme = localStorage.getItem("theme") ?? null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     if (!currentTheme) {
       currentTheme = prefersDark ? "dark" : "light";
     }

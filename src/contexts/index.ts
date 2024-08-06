@@ -3,17 +3,14 @@ export {
   type ThemeContextType,
   ThemeProvider,
 } from "./ThemeContext";
-export {
-  DataContext,
-  DataProvider
-} from "./DataContext";
+export { DataContext, DataProvider } from "./DataContext";
 export {
   LocaleContext,
   type LocaleContextType,
-  LocaleProvider
+  LocaleProvider,
 } from "./LocaleContext";
 export {
   ProjectContext,
   type ProjectContextType,
-  ProjectProvider
+  ProjectProvider,
 } from "./ProjectContext";

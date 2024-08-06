@@ -1,11 +1,14 @@
-import { createContext } from "preact";
-import { useData } from "../hooks/useData.ts";
-import { useState } from "preact/hooks";
-import { Project } from "../types";
+"use client";
+
+import { createContext, useEffect } from "react";
+import { useState } from "react";
+import { notFound, usePathname } from "next/navigation";
+
+import { Project } from "@/types";
+import { useData } from "@/hooks";
 
 export interface ProjectContextType {
   project: Project;
-  setSlug: (slug: string) => void;
 }
 
 const defaultProject = {
@@ -14,12 +17,11 @@ const defaultProject = {
   stack: [],
   title: "",
   description: "",
-  links: {}
-}
+  links: {},
+};
 
 export const ProjectContext = createContext<ProjectContextType>({
   project: defaultProject,
-  setSlug: () => { }
 });
 
 interface DataProviderProps {
@@ -28,24 +30,42 @@ interface DataProviderProps {
 
 export const ProjectProvider = (props: DataProviderProps) => {
   const { children } = props;
-  const [project, setProject] = useState<Project>(defaultProject);
+
+  const pathname = usePathname();
   const { projects } = useData();
 
-  const setSlug = (slug: string) => {
-    const project = projects.items.find(
-      (project) => project.slug === slug
-    );
-    if (project) {
-      setProject(project);
-    }
-  };
+  const [project, setProject] = useState<Project | null>(defaultProject);
 
+  useEffect(() => {
+    if (project !== null && project.slug !== "") return;
+
+    let slug = pathname.replace("/projects/", "");
+
+    if (projects.items.length > 0) {
+      const project = projects.items.find((project) => project.slug === slug);
+
+      if (project) {
+        setProject(project);
+      } else {
+        setProject(null);
+      }
+    }
+  }, [pathname, projects, project]);
+
+  if (project !== null && project.slug === "") {
+    return <div>Loading...</div>;
+  }
+
+  if (project === null) {
+    return notFound();
+  }
 
   return (
-    <ProjectContext.Provider value={{
-      project,
-      setSlug
-    }}>
+    <ProjectContext.Provider
+      value={{
+        project: project || defaultProject,
+      }}
+    >
       {children}
     </ProjectContext.Provider>
   );

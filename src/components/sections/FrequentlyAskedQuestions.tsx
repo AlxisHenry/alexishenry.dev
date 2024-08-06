@@ -1,9 +1,9 @@
-import { useState } from "preact/hooks";
+import { useState } from "react";
 import { ChevronDown } from "react-feather";
 
-import { useData } from "../../hooks";
+import { useData } from "@/hooks";
 
-import { Title } from "./Title";
+import { Title } from "@/components/sections";
 
 export const FrequentlyAskedQuestions = () => {
   const { faq } = useData();
@@ -12,10 +12,14 @@ export const FrequentlyAskedQuestions = () => {
   return (
     <section>
       <Title content={faq.title} />
-      <p class={"mt-8"} dangerouslySetInnerHTML={{ __html: faq.description }} />
-      <div class={"mt-8 grid gap-2"}>
+      <p
+        className={"mt-8"}
+        dangerouslySetInnerHTML={{ __html: faq.description }}
+      />
+      <div className={"mt-8 grid gap-2"}>
         {faq.items.map((q, index) => (
           <Question
+            key={`faq-${index}`}
             {...q}
             open={currentQuestion === index}
             onClick={() => {
@@ -46,21 +50,21 @@ const Question = (props: QuestionProps) => {
 
   return (
     <div
-      class={
+      className={
         "border transition-colors duration-300 ease-in-out hover:border-blue-500 rounded-lg transition-colors duration-300 ease-in-out cursor-pointer " +
         (open ? "border-blue-500" : "border-gray-300")
       }
     >
       <div
-        class={
+        className={
           "flex justify-between items-center cursor-pointer py-6 px-4 rounded-lg" +
           (open ? "border-b border-gray-300" : "")
         }
         onClick={onClick}
       >
-        <h3 class={"text-md font-semibold"}>{question}</h3>
+        <h3 className={"text-md font-semibold"}>{question}</h3>
         <span
-          class={
+          className={
             "transition-transform duration-300 ease-in-out transform " +
             (open ? "rotate-180" : "")
           }
@@ -69,10 +73,12 @@ const Question = (props: QuestionProps) => {
         </span>
       </div>
       <div
-        class={"bg-red py-2 px-4 rounded-b-lg hidden" + (open ? "block" : "")}
+        className={
+          "bg-red py-2 px-4 rounded-b-lg hidden" + (open ? "block" : "")
+        }
       >
         <p
-          class={"mb-4"}
+          className={"mb-4"}
           dangerouslySetInnerHTML={{ __html: formatAnswer(answer) }}
         />
       </div>

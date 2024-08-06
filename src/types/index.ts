@@ -1,7 +1,7 @@
 export type Data = {
   navigation: {
     items: NavigationItem[];
-  }
+  };
   hero: HeroSection;
   services: ServicesSection;
   projects: ProjectsSection;
@@ -35,7 +35,7 @@ type HeroIcon = {
 type ContactSection = Section & {
   submitted: string;
   submitMessage: string;
-  fields: ContactFormField[]
+  fields: ContactFormField[];
 };
 
 export type ContactFormField = {
@@ -44,7 +44,7 @@ export type ContactFormField = {
   placeholder: string;
   inFirstRow?: boolean;
   options?: string[];
-}
+};
 
 type WorkingTogetherSection = Section & {
   steps: WorkingTogetherStep[];
@@ -70,7 +70,7 @@ export type Project = {
   links: {
     github?: string;
     preview?: string;
-  }
+  };
 };
 
 type FaqSection = Section & {
