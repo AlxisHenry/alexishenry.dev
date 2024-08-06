@@ -1,7 +1,8 @@
-import locales from "../assets/locales.json";
+"use client";
 
-import { createContext } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { createContext } from "react";
+import { useEffect, useState } from "react";
+import locales from "@/assets/locales.json";
 
 type Locale = {
   icon: string;

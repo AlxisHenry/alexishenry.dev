@@ -1,11 +1,18 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink, GitHub } from "react-feather";
-import { useData, useProject } from "../../hooks";
-import { Project } from "../../types/index.ts";
+import { useEffect, useRef, useState } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  ExternalLink,
+  GitHub,
+} from "react-feather";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Title } from "./Title";
-import { useEffect, useRef, useState } from "preact/hooks";
-import { useLocation } from "preact-iso";
-import { ProjectProvider } from "../../contexts";
+import { useData } from "@/hooks";
+import { Project } from "@/types";
+
+import { Title } from "@/components/sections";
 
 export const Projects = () => {
   const { projects } = useData();
@@ -57,34 +64,31 @@ export const Projects = () => {
     }
   };
 
-
   return (
-    <ProjectProvider>
-      <section id={"projects"}>
-        <div class={"flex justify-between items-center"}>
-          <Title content={projects.title} />
-          <div class={"hidden sm:flex gap-3 items-center"}>
-            <Arrow direction="left" onClick={scrollToPrevious} />
-            <Arrow direction="right" onClick={scrollToNext} />
-          </div>
+    <section id={"projects"}>
+      <div className={"flex justify-between items-center"}>
+        <Title content={projects.title} />
+        <div className={"hidden sm:flex gap-3 items-center"}>
+          <Arrow direction="left" onClick={scrollToPrevious} />
+          <Arrow direction="right" onClick={scrollToNext} />
         </div>
-        {projects.items.length < 1 ? (
-          <p class={"mt-6 text-gray-500 text-lg"}>{projects.empty}</p>
-        ) : (
-          <>
-            <div
-              ref={scrollRef}
-              class={"mt-10 flex overflow-x-auto gap-10 hide-scrollbar"}
-            >
-              {projects.items.map((project: any, index: number) => (
-                <ProjectCard project={project} key={index} />
-              ))}
-            </div>
-            <ProgressIndicator progress={scrollProgress} />
-          </>
-        )}
-      </section>
-    </ProjectProvider>
+      </div>
+      {projects.items.length < 1 ? (
+        <p className={"mt-6 text-gray-500 text-lg"}>{projects.empty}</p>
+      ) : (
+        <>
+          <div
+            ref={scrollRef}
+            className={"mt-10 flex overflow-x-auto gap-10 hide-scrollbar"}
+          >
+            {projects.items.map((project: any, index: number) => (
+              <ProjectCard project={project} key={index} />
+            ))}
+          </div>
+          <ProgressIndicator progress={scrollProgress} />
+        </>
+      )}
+    </section>
   );
 };
 
@@ -97,7 +101,12 @@ const Arrow = (props: ArrowProps) => {
   const { direction, onClick } = props;
 
   return (
-    <div class={"p-2 border border-gray-400 text-gray-400 rounded-full w-fit cursor-pointer transition-colors duration-300 ease-in-out hover:border-blue-500 hover:text-blue-500"} onClick={onClick}>
+    <div
+      className={
+        "p-2 border border-gray-400 text-gray-400 rounded-full w-fit cursor-pointer transition-colors duration-300 ease-in-out hover:border-blue-500 hover:text-blue-500"
+      }
+      onClick={onClick}
+    >
       {direction === "left" ? (
         <ArrowLeft size={28} />
       ) : (
@@ -105,7 +114,7 @@ const Arrow = (props: ArrowProps) => {
       )}
     </div>
   );
-}
+};
 
 interface ProgressIndicatorProps {
   progress: number;
@@ -115,13 +124,16 @@ const ProgressIndicator = (props: ProgressIndicatorProps) => {
   const { progress } = props;
 
   return (
-    <div class={"mt-10"}>
-      <div class={"w-full rounded-full h-[3px] bg-gray-400"}>
-        <div class={"rounded-full h-[3px] bg-blue-600"} style={{ width: `${progress}%` }} />
+    <div className={"mt-10"}>
+      <div className={"w-full rounded-full h-[3px] bg-gray-400"}>
+        <div
+          className={"rounded-full h-[3px] bg-blue-600"}
+          style={{ width: `${progress}%` }}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
 interface ProjectCardProps {
   project: Project;
@@ -130,53 +142,77 @@ interface ProjectCardProps {
 const ProjectCard = (props: ProjectCardProps) => {
   const { project } = props;
 
-  const { setSlug } = useProject();
   const { projects } = useData();
 
-  const location = useLocation();
-
   return (
-    <div class={"w-full min-w-[960px] min-h-[480px] flex flex-col gap-4 text-justify cursor-pointer"}>
-      <div class={"relative"}>
-        <img src={project.thumbnail} alt={project.title} class={"w-full min-w-[960px] object-cover rounded-2xl filter brightness-[30%]"} />
-        <div class={"absolute left-4 top-4 p-4 bottom-4 right-4 flex flex-col items-center justify-center text-white"}>
-          <div class={"text-white filter brightness-[100%]"}>
-            <h1 class={"text-4xl font-bold"}>
-              {project.title}
-            </h1>
+    <div
+      className={
+        "w-full min-w-[960px] min-h-[480px] flex flex-col gap-4 text-justify cursor-pointer"
+      }
+    >
+      <div className={"relative"}>
+        <Image
+          width={960}
+          height={480}
+          src={project.thumbnail}
+          alt={project.title}
+          className={
+            "w-full min-w-[960px] object-cover rounded-2xl filter brightness-[30%]"
+          }
+        />
+        <div
+          className={
+            "absolute left-4 top-4 p-4 bottom-4 right-4 flex flex-col items-center justify-center text-white"
+          }
+        >
+          <div className={"text-white filter brightness-[100%]"}>
+            <h1 className={"text-4xl font-bold"}>{project.title}</h1>
           </div>
-          <div class={"flex gap-4 mt-4"}>
+          <div className={"flex gap-4 mt-4"}>
             {project.stack.map((tag, index) => (
-              <span key={index} class={"font-semibold text-gray-300"}>
+              <span key={index} className={"font-semibold text-gray-300"}>
                 {tag}
               </span>
             ))}
           </div>
-          <div class={"flex gap-4 mt-4"}>
+          <div className={"flex gap-4 mt-4"}>
             {project.links.github && (
-              <a href={project.links.github} target={"_blank"} rel={"noopener noreferrer"} class={"hover:text-blue-500 transition-colors duration-300 ease-in-out"}>
+              <a
+                href={project.links.github}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+                className={
+                  "hover:text-blue-500 transition-colors duration-300 ease-in-out"
+                }
+              >
                 <GitHub size={32} />
               </a>
             )}
             {project.links.preview && (
-              <a href={project.links.preview} target={"_blank"} rel={"noopener noreferrer"} class={"hover:text-blue-500 transition-colors duration-300 ease-in-out"}>
+              <a
+                href={project.links.preview}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+                className={
+                  "hover:text-blue-500 transition-colors duration-300 ease-in-out"
+                }
+              >
                 <ExternalLink size={32} />
               </a>
             )}
           </div>
-          <button class={"absolute bottom-4 left-4 hover:text-blue-500 transition-colors duration-300 ease-in-out gap-2 flex"}
-            onClick={() => {
-              location.route(`/projects/${project.slug}`);
-              setSlug(project.slug);
-            }}>
+          <Link
+            className={
+              "absolute bottom-4 left-4 hover:text-blue-500 transition-colors duration-300 ease-in-out gap-2 flex"
+            }
+            href={`/projects/${project.slug}`}
+          >
             <span>{projects.viewProject}</span>
             <ArrowUpRight size={24} />
-          </button>
+          </Link>
         </div>
       </div>
-      <h2 class={"px-4 py-1 text-md font-thin"}>
-        {project.description}
-      </h2>
+      <h2 className={"px-4 py-1 text-md font-thin"}>{project.description}</h2>
     </div>
   );
-}
+};

@@ -11,7 +11,7 @@ export const Button = (props: ButtonProps) => {
     <button
       disabled={submitting}
       onClick={onClick}
-      class={
+      className={
         "border hover:border-blue-500 bg-blue-500 text-white px-8 py-6 rounded-lg flex items-center justify-center transition-colors duration-300 ease-in-out w-full focus:outline-none"
       }
     >

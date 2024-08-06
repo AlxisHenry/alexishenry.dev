@@ -73,7 +73,7 @@
     "projects": {
       "title": "My <span class='text-blue-500'>projects</span>",
       "empty": "No projects yet.",
-      "viewProject":"View project",
+      "viewProject": "View project",
       "description": "",
       "items": []
     },
@@ -243,12 +243,8 @@
       "items": [
         {
           "slug": "epigrades",
-          "thumbnail": "https://epigrades.alexishenry.eu/_next/image?url=%2Fscreenshots%2Freport.png&w=1920&q=75",
-          "stack": [
-            "NextJS",
-            "TailwindCSS",
-            "Puppeteer"
-          ],
+          "thumbnail": "/report.png",
+          "stack": ["NextJS", "TailwindCSS", "Puppeteer"],
           "title": "Epigrades",
           "description": "Epigrades est une application mobile qui permet de noter les professeurs et de consulter les notes des autres étudiants.",
           "links": {
@@ -258,10 +254,8 @@
         },
         {
           "slug": "sylservices",
-          "thumbnail": "https://epigrades.alexishenry.eu/_next/image?url=%2Fscreenshots%2Freport.png&w=1920&q=75",
-          "stack": [
-            "CMS (amen.fr)"
-          ],
+          "thumbnail": "/projects/report.png",
+          "stack": ["CMS (amen.fr)"],
           "title": "Syl'services",
           "description": "Mise à jour du site internet de l'entreprise Syl'services qui avait été réalisé avec le CMS amen.fr. Il s'agit d'un site vitrine pour présenter les services et les réalisations de l'entreprise.",
           "links": {
@@ -270,14 +264,10 @@
         },
         {
           "slug": "sylservices-app",
-          "thumbnail": "https://epigrades.alexishenry.eu/_next/image?url=%2Fscreenshots%2Freport.png&w=1920&q=75",
-          "stack": [
-            "PHP",
-            "Laravel",
-            "Livewire"
-          ],
+          "thumbnail": "/projects/report.png",
+          "stack": ["PHP", "Laravel", "Livewire"],
           "title": "Syl'services",
-          "description": "Création d'une application web pour l'entreprise Syl'services. Cette application permet la gestion du stock de l'entreprise.", 
+          "description": "Création d'une application web pour l'entreprise Syl'services. Cette application permet la gestion du stock de l'entreprise.",
           "links": {}
         }
       ]

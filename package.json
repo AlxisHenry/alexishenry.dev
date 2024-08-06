@@ -1,33 +1,37 @@
 {
-  "name": "vite-project",
-  "private": true,
+  "name": "alexishenry.dev",
   "version": "0.1.0",
-  "homepage": "https://alexishenry.dev",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "^11.2.13",
-    "mailersend": "^2.2.0",
-    "preact": "^10.22.0",
-    "preact-iso": "^2.6.3",
-    "preact-render-to-string": "^6.5.5",
-    "react-country-flag": "^3.1.0",
-    "react-feather": "^2.0.10"
-  },
-  "devDependencies": {
-    "@preact/preset-vite": "^2.8.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.13",
+    "@types/nodemailer": "^6.4.15",
+    "framer-motion": "^11.2.13",
+    "next": "14.2.5",
+    "nodemailer": "^6.9.14",
+    "react": "^18",
+    "react-country-flag": "^3.1.0",
+    "react-dom": "^18",
+    "react-feather": "^2.0.10",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
