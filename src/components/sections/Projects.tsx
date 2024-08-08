@@ -212,7 +212,7 @@ const ProjectCard = (props: ProjectCardProps) => {
           </Link>
         </div>
       </div>
-      <h2 className={"px-4 py-1 text-md font-thin"}>{project.description}</h2>
+      <h2 className={"px-3 py-1 text-md"}>{project.description}</h2>
     </div>
   );
 };
