@@ -53,16 +53,10 @@ section {
 }
 
 .name {
-  font-size: 150px;
+  font-size: min(18vw, 160px);
   line-height: 1;
   margin-top: -0.6em;
   max-width: 640px;
-}
-
-@media (max-width: 768px) {
-  .name {
-    font-size: 100px;
-  }
 }
 
 .projects {
