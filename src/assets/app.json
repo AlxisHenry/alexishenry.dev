@@ -78,7 +78,7 @@
       "items": [
         {
           "slug": "epigrades",
-          "thumbnail": "/projects/report.png",
+          "thumbnail": "/projects/epigrades.png",
           "stack": ["NextJS", "TailwindCSS", "Puppeteer"],
           "title": "Epigrades",
           "description": "Epigrades is a tool for Epitech students (in MSc-Pro) that allows them to retrieve all the necessary information for their academic journey in less than 2 minutes!",
@@ -89,7 +89,7 @@
         },
         {
           "slug": "sylservices",
-          "thumbnail": "/projects/report.png",
+          "thumbnail": "/projects/sylservices.png",
           "stack": ["CMS (amen.fr)"],
           "title": "Syl'services",
           "description": "Update of the website of the company Syl'services which had been made with the CMS amen.fr. This is a showcase site to present the services and achievements of the company.",
@@ -99,7 +99,7 @@
         },
         {
           "slug": "sylservices-app",
-          "thumbnail": "/projects/report.png",
+          "thumbnail": "/projects/sylservices-app.png",
           "stack": ["PHP", "Laravel", "Livewire"],
           "title": "Syl'services",
           "description": "Creation of a web application for the company Syl'services. This application allows the management of the company's stock.",
@@ -276,7 +276,7 @@
           "thumbnail": "/projects/epigrades.png",
           "stack": ["NextJS", "TailwindCSS", "Puppeteer"],
           "title": "Epigrades",
-          "description": "Epigrades est une application mobile qui permet de noter les professeurs et de consulter les notes des autres étudiants.",
+          "description": "Epigrades est un outil pour les étudiants d'Epitech (en MSc-Pro) qui leur permet de récupérer toutes les informations nécessaires pour leur parcours académique en moins de 2 minutes !",
           "links": {
             "github": "https://github.com/AlxisHenry/epigrades",
             "preview": "https://epigrades.alexishenry.eu"
