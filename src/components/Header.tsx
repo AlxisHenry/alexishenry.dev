@@ -198,7 +198,7 @@ const ResponsiveNavigation = () => {
       </button>
       <motion.nav
         // @ts-ignore
-        className={`fixed top-[80px] left-0 right-0 z-50 bg- dark:bg-gray-800 border-b-2 border-gray-200 shadow-sm dark:border-gray-700 flex flex-col gap-4 p-4 ${
+        className={`responsive-nav fixed top-[80px] left-0 right-0 z-50 bg- dark:bg-gray-800 border-b-2 border-gray-200 shadow-sm dark:border-gray-700 flex flex-col gap-4 p-4 ${
           open ? "flex" : "hidden"
         }`}
         initial={{ opacity: 0 }}

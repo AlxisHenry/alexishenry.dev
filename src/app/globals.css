@@ -5,11 +5,13 @@
 :root {
   font-size: 20px;
   --color-primary: #1e1e1e;
+  --header-bg: #f3f8fce2;
   --color-secondary: #f3f8fc;
 }
 
 body.dark {
   --color-primary: #f3f8fc;
+  --header-bg: #1e1e1eaa;
   --color-secondary: #1e1e1e;
 }
 
@@ -34,8 +36,9 @@ footer .content {
 }
 
 header,
-nav {
-  background-color: var(--color-secondary);
+.responsive-nav {
+  background-color: var(--header-bg);
+  backdrop-filter: saturate(180%) blur(20px);
 }
 
 section {

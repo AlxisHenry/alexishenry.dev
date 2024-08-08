@@ -65,11 +65,11 @@ const Question = (props: QuestionProps) => {
         <h3 className={"text-md font-semibold"}>{question}</h3>
         <span
           className={
-            "transition-transform duration-300 ease-in-out transform " +
+            "transition-transform text-gray-200 duration-300 ease-in-out transform " +
             (open ? "rotate-180" : "")
           }
         >
-          <ChevronDown size={36} color={open ? "#2563EB" : "#000"} />
+          <ChevronDown size={36} className={`${open ? "text-blue-500" : "text-gray-500 dark:text-gray-200"}`} />
         </span>
       </div>
       <div
